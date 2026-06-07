@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad · jmlfoto · Jose Morales</title>
+  <meta name="description" content="Política de privacidad de jmlfoto, web de Jose Morales, fotógrafo profesional con base en Madrid." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://jmlfoto-gw.github.io/jmlfoto/privacidad.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── VARIABLES (mismo sistema que style.css) ── */
+    :root {
+      --c-white:  #fafaf8;
+      --c-black:  #0d0d0d;
+      --c-dark:   #1a1a1a;
+      --c-grey-1: #2e2e2e;
+      --c-grey-2: #6b6b6b;
+      --c-grey-3: #a8a8a8;
+      --c-grey-4: #d8d8d4;
+      --c-grey-5: #efefec;
+      --f-display: 'Cormorant Garamond', Georgia, serif;
+      --f-body:    'DM Sans', system-ui, sans-serif;
+      --max-w: 1200px;
+      --pad:   2rem;
+      --t: 0.3s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--c-white);
+      color: var(--c-black);
+      font-family: var(--f-body);
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--c-grey-5); }
+    ::-webkit-scrollbar-thumb { background: var(--c-grey-3); border-radius: 2px; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,250,248,0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--c-grey-4);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--f-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--c-black);
+      transition: opacity var(--t);
+    }
+    .nav-logo:hover { opacity: 0.5; }
+
+    .nav-back {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-grey-2);
+      transition: color var(--t);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-back:hover { color: var(--c-black); }
+    .nav-back::before { content: '←'; font-family: var(--f-body); }
+
+    /* ── HERO LEGAL ── */
+    .legal-hero {
+      padding: 9rem 0 4rem;
+      border-bottom: 1px solid var(--c-grey-4);
+    }
+
+    .legal-hero .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    .legal-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-grey-2);
+      margin-bottom: 1.2rem;
+    }
+
+    .legal-hero h1 {
+      font-family: var(--f-display);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--c-black);
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-hero h1 em {
+      font-style: italic;
+      color: var(--c-grey-2);
+    }
+
+    .legal-meta {
+      font-size: 0.82rem;
+      color: var(--c-grey-3);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── CONTENIDO ── */
+    .legal-body {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 6rem;
+      align-items: start;
+      padding-top: 5rem;
+      padding-bottom: 7rem;
+    }
+
+    /* Índice lateral */
+    .legal-index {
+      position: sticky;
+      top: 5rem;
+    }
+
+    .legal-index-title {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--c-grey-3);
+      margin-bottom: 1.2rem;
+    }
+
+    .legal-index ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      counter-reset: idx;
+    }
+
+    .legal-index ol li { counter-increment: idx; }
+
+    .legal-index ol li a {
+      font-size: 0.8rem;
+      color: var(--c-grey-2);
+      transition: color var(--t);
+      display: flex;
+      gap: 0.7rem;
+      align-items: baseline;
+      line-height: 1.4;
+    }
+
+    .legal-index ol li a::before {
+      content: counter(idx, decimal-leading-zero);
+      font-size: 0.65rem;
+      color: var(--c-grey-4);
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .legal-index ol li a:hover { color: var(--c-black); }
+
+    /* Artículos */
+    .legal-content { max-width: 680px; }
+
+    .legal-art {
+      padding-bottom: 3.5rem;
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--c-grey-5);
+    }
+    .legal-art:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .art-num {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-grey-3);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .legal-art h2 {
+      font-family: var(--f-display);
+      font-size: clamp(1.3rem, 2vw, 1.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--c-black);
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-art p {
+      color: var(--c-grey-1);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 1.1em;
+    }
+    .legal-art p:last-child { margin-bottom: 0; }
+
+    .legal-art ul {
+      list-style: none;
+      margin: 1.1em 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .legal-art ul li {
+      font-size: 0.95rem;
+      color: var(--c-grey-1);
+      line-height: 1.7;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .legal-art ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--c-grey-4);
+      font-size: 0.85rem;
+    }
+
+    .legal-art a {
+      color: var(--c-black);
+      border-bottom: 1px solid var(--c-grey-4);
+      transition: border-color var(--t);
+    }
+    .legal-art a:hover { border-color: var(--c-black); }
+
+    /* Recuadro destacado */
+    .legal-box {
+      background: var(--c-grey-5);
+      border-left: 2px solid var(--c-grey-4);
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0;
+      border-radius: 1px;
+    }
+
+    .legal-box p {
+      font-size: 0.9rem !important;
+      color: var(--c-grey-2) !important;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--c-black);
+      padding: 2.5rem 0;
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-left { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    .footer-logo {
+      font-family: var(--f-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--c-white);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-nav { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    .footer-nav a {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      transition: color var(--t);
+    }
+    .footer-nav a:hover { color: var(--c-white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .legal-body {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-top: 3rem;
+      }
+      .legal-index { position: static; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --pad: 1.4rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <nav class="nav-inner" aria-label="Navegación">
+      <a href="index.html" class="nav-logo" aria-label="jmlfoto · Inicio">jmlfoto</a>
+      <a href="index.html" class="nav-back" aria-label="Volver al inicio">Inicio</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- CABECERA -->
+    <div class="legal-hero">
+      <div class="container">
+        <span class="legal-label">Información legal</span>
+        <h1>Política de<br /><em>Privacidad</em></h1>
+        <p class="legal-meta">Última actualización: junio de 2026</p>
+      </div>
+    </div>
+
+    <!-- CUERPO -->
+    <div class="legal-body">
+
+      <!-- Índice lateral -->
+      <aside class="legal-index" aria-label="Índice de contenidos">
+        <p class="legal-index-title">Contenido</p>
+        <ol>
+          <li><a href="#responsable">Responsable del tratamiento</a></li>
+          <li><a href="#datos">Datos que recogemos</a></li>
+          <li><a href="#finalidad">Finalidad y base legal</a></li>
+          <li><a href="#conservacion">Conservación</a></li>
+          <li><a href="#destinatarios">Destinatarios</a></li>
+          <li><a href="#derechos">Tus derechos</a></li>
+          <li><a href="#cookies">Cookies y analítica</a></li>
+          <li><a href="#menores">Menores de edad</a></li>
+          <li><a href="#cambios">Cambios en esta política</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ol>
+      </aside>
+
+      <!-- Artículos -->
+      <div class="legal-content">
+
+        <div class="legal-box">
+          <p>Esta política de privacidad explica cómo Jose Morales López (jmlfoto) recoge, usa y protege los datos personales de quienes visitan y utilizan este sitio web, de acuerdo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y Garantía de los Derechos Digitales (LOPDGDD).</p>
+        </div>
+
+        <!-- 1 -->
+        <article class="legal-art" id="responsable">
+          <span class="art-num">01</span>
+          <h2>Responsable del tratamiento</h2>
+          <p><strong>Identidad:</strong> Jose Morales López</p>
+          <p><strong>Actividad:</strong> Fotógrafo profesional — jmlfoto</p>
+          <p><strong>Domicilio:</strong> Madrid, España</p>
+          <p><strong>Correo electrónico:</strong> <a href="mailto:jose@jmlfoto.es">jose@jmlfoto.es</a></p>
+          <p><strong>Sitio web:</strong> <a href="https://jmlfoto.es" target="_blank" rel="noopener">jmlfoto.es</a></p>
+        </article>
+
+        <!-- 2 -->
+        <article class="legal-art" id="datos">
+          <span class="art-num">02</span>
+          <h2>Datos que recogemos</h2>
+          <p>Este sitio web recoge datos personales exclusivamente a través de dos vías:</p>
+          <ul>
+            <li><strong>Formulario de contacto:</strong> nombre, dirección de correo electrónico y el mensaje que introduces libremente. Estos datos se procesan a través del servicio Formspree (formspree.io).</li>
+            <li><strong>Analítica web:</strong> datos de navegación anónimos o seudonimizados mediante Google Analytics 4, que pueden incluir dirección IP (anonimizada), tipo de navegador, sistema operativo, páginas visitadas, tiempo de permanencia y procedencia del tráfico.</li>
+          </ul>
+          <p>No recogemos datos de pago ni información financiera de ningún tipo. Las transacciones de compra de fotografías se realizan íntegramente a través de la plataforma externa Saal Digital (photo-portal.shop), sujeta a su propia política de privacidad.</p>
+        </article>
+
+        <!-- 3 -->
+        <article class="legal-art" id="finalidad">
+          <span class="art-num">03</span>
+          <h2>Finalidad y base legal del tratamiento</h2>
+          <p>Los datos recogidos se utilizan para las siguientes finalidades:</p>
+          <ul>
+            <li><strong>Atender consultas y solicitudes</strong> enviadas a través del formulario de contacto. Base legal: interés legítimo y ejecución de medidas precontractuales (art. 6.1.b RGPD).</li>
+            <li><strong>Analizar el uso del sitio web</strong> para mejorar su contenido y rendimiento. Base legal: consentimiento del usuario (art. 6.1.a RGPD), gestionado a través del aviso de cookies.</li>
+          </ul>
+          <p>No se tomarán decisiones automatizadas ni se elaborarán perfiles a partir de los datos recogidos.</p>
+        </article>
+
+        <!-- 4 -->
+        <article class="legal-art" id="conservacion">
+          <span class="art-num">04</span>
+          <h2>Plazo de conservación</h2>
+          <p>Los datos del formulario de contacto se conservan el tiempo estrictamente necesario para atender tu consulta y, en su caso, el tiempo legalmente exigido para acreditar el cumplimiento de obligaciones.</p>
+          <p>Los datos de analítica web se conservan según la configuración del período de retención establecido en Google Analytics, que no supera los 14 meses.</p>
+          <p>Transcurridos esos plazos, los datos se eliminan o anonomizan de forma permanente.</p>
+        </article>
+
+        <!-- 5 -->
+        <article class="legal-art" id="destinatarios">
+          <span class="art-num">05</span>
+          <h2>Destinatarios y transferencias internacionales</h2>
+          <p>Los datos personales pueden ser comunicados a los siguientes terceros proveedores de servicios, que actúan como encargados del tratamiento:</p>
+          <ul>
+            <li><strong>Formspree Inc.</strong> — procesamiento del formulario de contacto. Política de privacidad: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a>.</li>
+            <li><strong>Google LLC (Google Analytics 4)</strong> — analítica web. Google puede transferir datos a servidores ubicados en Estados Unidos, bajo el marco de adecuación EU–US Data Privacy Framework. Política de privacidad: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</li>
+          </ul>
+          <p>No se realizan otras cesiones de datos a terceros, salvo obligación legal.</p>
+        </article>
+
+        <!-- 6 -->
+        <article class="legal-art" id="derechos">
+          <span class="art-num">06</span>
+          <h2>Tus derechos</h2>
+          <p>Como titular de los datos, puedes ejercer en cualquier momento los siguientes derechos:</p>
+          <ul>
+            <li><strong>Acceso:</strong> conocer qué datos personales tuyos tratamos.</li>
+            <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
+            <li><strong>Supresión:</strong> solicitar la eliminación de tus datos cuando ya no sean necesarios.</li>
+            <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos en determinadas circunstancias.</li>
+            <li><strong>Limitación:</strong> solicitar que restrinjamos el tratamiento de tus datos.</li>
+            <li><strong>Portabilidad:</strong> recibir tus datos en un formato estructurado y de uso común.</li>
+            <li><strong>Retirada del consentimiento:</strong> en cualquier momento, sin que ello afecte a la licitud del tratamiento previo.</li>
+          </ul>
+          <p>Para ejercer cualquiera de estos derechos, escríbenos a <a href="mailto:jose@jmlfoto.es">jose@jmlfoto.es</a>. Responderemos en el plazo máximo de un mes.</p>
+          <p>Si consideras que el tratamiento no se ajusta a la normativa, también tienes derecho a presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos (aepd.es)</a>.</p>
+        </article>
+
+        <!-- 7 -->
+        <article class="legal-art" id="cookies">
+          <span class="art-num">07</span>
+          <h2>Cookies y analítica web</h2>
+          <p>Este sitio web utiliza cookies propias y de terceros. En concreto:</p>
+          <ul>
+            <li><strong>Cookies técnicas:</strong> necesarias para el funcionamiento básico del sitio. No requieren consentimiento.</li>
+            <li><strong>Cookies analíticas (Google Analytics 4):</strong> recogen información estadística y anónima sobre el uso del sitio. Requieren tu consentimiento previo.</li>
+          </ul>
+          <p>Al acceder por primera vez, se te mostrará un aviso de cookies donde podrás aceptar o rechazar las cookies no esenciales. Puedes modificar tu elección en cualquier momento borrando las cookies de tu navegador o a través de la configuración del mismo.</p>
+          <p>Para más información sobre cómo Google gestiona los datos de Analytics, consulta <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener noreferrer">la política de privacidad de Google Analytics</a>.</p>
+        </article>
+
+        <!-- 8 -->
+        <article class="legal-art" id="menores">
+          <span class="art-num">08</span>
+          <h2>Menores de edad</h2>
+          <p>Este sitio web no está dirigido a menores de 14 años. No recogemos conscientemente datos personales de menores. Si tienes conocimiento de que un menor ha facilitado datos personales a través de este sitio, te rogamos que lo comuniques a <a href="mailto:jose@jmlfoto.es">jose@jmlfoto.es</a> para proceder a su eliminación.</p>
+        </article>
+
+        <!-- 9 -->
+        <article class="legal-art" id="cambios">
+          <span class="art-num">09</span>
+          <h2>Cambios en esta política</h2>
+          <p>Esta política de privacidad puede actualizarse para reflejar cambios normativos, técnicos o en la actividad del sitio. La fecha de la última actualización figura en la cabecera de este documento. Te recomendamos revisarla periódicamente.</p>
+        </article>
+
+        <!-- 10 -->
+        <article class="legal-art" id="contacto">
+          <span class="art-num">10</span>
+          <h2>Contacto</h2>
+          <p>Para cualquier consulta relacionada con esta política de privacidad o con el tratamiento de tus datos personales, puedes contactar con el responsable del tratamiento en:</p>
+          <p><a href="mailto:jose@jmlfoto.es">jose@jmlfoto.es</a></p>
+        </article>
+
+      </div><!-- /legal-content -->
+    </div><!-- /legal-body -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">jmlfoto</span>
+        <span class="footer-copy">© 2026 Jose Morales · Madrid</span>
+      </div>
+      <nav class="footer-nav" aria-label="Navegación footer">
+        <a href="https://jmlfoto.es" target="_blank" rel="noopener">Blog</a>
+        <a href="https://gwendal.es" target="_blank" rel="noopener">Gwendal</a>
+        <a href="privacidad.html" aria-current="page">Privacidad</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+      </nav>
+    </div>
+  </footer>
+<script src="cookies.js"></script>
+</body>
+</html>
