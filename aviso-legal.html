@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviso Legal · jmlfoto · Jose Morales</title>
+  <meta name="description" content="Aviso legal de jmlfoto, web de Jose Morales, fotógrafo profesional con base en Madrid." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://jmlfoto-gw.github.io/jmlfoto/aviso-legal.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── VARIABLES (mismo sistema que style.css) ── */
+    :root {
+      --c-white:  #fafaf8;
+      --c-black:  #0d0d0d;
+      --c-dark:   #1a1a1a;
+      --c-grey-1: #2e2e2e;
+      --c-grey-2: #6b6b6b;
+      --c-grey-3: #a8a8a8;
+      --c-grey-4: #d8d8d4;
+      --c-grey-5: #efefec;
+      --f-display: 'Cormorant Garamond', Georgia, serif;
+      --f-body:    'DM Sans', system-ui, sans-serif;
+      --max-w: 1200px;
+      --pad:   2rem;
+      --t: 0.3s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--c-white);
+      color: var(--c-black);
+      font-family: var(--f-body);
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--c-grey-5); }
+    ::-webkit-scrollbar-thumb { background: var(--c-grey-3); border-radius: 2px; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,250,248,0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--c-grey-4);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--f-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--c-black);
+      transition: opacity var(--t);
+    }
+    .nav-logo:hover { opacity: 0.5; }
+
+    .nav-back {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-grey-2);
+      transition: color var(--t);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-back:hover { color: var(--c-black); }
+    .nav-back::before { content: '←'; font-family: var(--f-body); }
+
+    /* ── HERO LEGAL ── */
+    .legal-hero {
+      padding: 9rem 0 4rem;
+      border-bottom: 1px solid var(--c-grey-4);
+    }
+
+    .legal-hero .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    .legal-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-grey-2);
+      margin-bottom: 1.2rem;
+    }
+
+    .legal-hero h1 {
+      font-family: var(--f-display);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--c-black);
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-hero h1 em {
+      font-style: italic;
+      color: var(--c-grey-2);
+    }
+
+    .legal-meta {
+      font-size: 0.82rem;
+      color: var(--c-grey-3);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── CONTENIDO ── */
+    .legal-body {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 6rem;
+      align-items: start;
+      padding-top: 5rem;
+      padding-bottom: 7rem;
+    }
+
+    /* Índice lateral */
+    .legal-index {
+      position: sticky;
+      top: 5rem;
+    }
+
+    .legal-index-title {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--c-grey-3);
+      margin-bottom: 1.2rem;
+    }
+
+    .legal-index ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      counter-reset: idx;
+    }
+
+    .legal-index ol li { counter-increment: idx; }
+
+    .legal-index ol li a {
+      font-size: 0.8rem;
+      color: var(--c-grey-2);
+      transition: color var(--t);
+      display: flex;
+      gap: 0.7rem;
+      align-items: baseline;
+      line-height: 1.4;
+    }
+
+    .legal-index ol li a::before {
+      content: counter(idx, decimal-leading-zero);
+      font-size: 0.65rem;
+      color: var(--c-grey-4);
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .legal-index ol li a:hover { color: var(--c-black); }
+
+    /* Artículos */
+    .legal-content { max-width: 680px; }
+
+    .legal-art {
+      padding-bottom: 3.5rem;
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--c-grey-5);
+    }
+    .legal-art:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .art-num {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-grey-3);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .legal-art h2 {
+      font-family: var(--f-display);
+      font-size: clamp(1.3rem, 2vw, 1.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--c-black);
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-art p {
+      color: var(--c-grey-1);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 1.1em;
+    }
+    .legal-art p:last-child { margin-bottom: 0; }
+
+    .legal-art ul {
+      list-style: none;
+      margin: 1.1em 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .legal-art ul li {
+      font-size: 0.95rem;
+      color: var(--c-grey-1);
+      line-height: 1.7;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .legal-art ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--c-grey-4);
+      font-size: 0.85rem;
+    }
+
+    .legal-art a {
+      color: var(--c-black);
+      border-bottom: 1px solid var(--c-grey-4);
+      transition: border-color var(--t);
+    }
+    .legal-art a:hover { border-color: var(--c-black); }
+
+    /* Recuadro destacado */
+    .legal-box {
+      background: var(--c-grey-5);
+      border-left: 2px solid var(--c-grey-4);
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0;
+      border-radius: 1px;
+    }
+
+    .legal-box p {
+      font-size: 0.9rem !important;
+      color: var(--c-grey-2) !important;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--c-black);
+      padding: 2.5rem 0;
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-left { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    .footer-logo {
+      font-family: var(--f-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--c-white);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-nav { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    .footer-nav a {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      transition: color var(--t);
+    }
+    .footer-nav a:hover { color: var(--c-white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .legal-body {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-top: 3rem;
+      }
+      .legal-index { position: static; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --pad: 1.4rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <nav class="nav-inner" aria-label="Navegación">
+      <a href="index.html" class="nav-logo" aria-label="jmlfoto · Inicio">jmlfoto</a>
+      <a href="index.html" class="nav-back" aria-label="Volver al inicio">Inicio</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- CABECERA -->
+    <div class="legal-hero">
+      <div class="container">
+        <span class="legal-label">Información legal</span>
+        <h1>Aviso<br /><em>Legal</em></h1>
+        <p class="legal-meta">Última actualización: junio de 2026</p>
+      </div>
+    </div>
+
+    <!-- CUERPO -->
+    <div class="legal-body">
+
+      <!-- Índice lateral -->
+      <aside class="legal-index" aria-label="Índice de contenidos">
+        <p class="legal-index-title">Contenido</p>
+        <ol>
+          <li><a href="#titular">Titular del sitio web</a></li>
+          <li><a href="#objeto">Objeto y aceptación</a></li>
+          <li><a href="#propiedad">Propiedad intelectual</a></li>
+          <li><a href="#contenidos">Contenidos y uso permitido</a></li>
+          <li><a href="#responsabilidad">Limitación de responsabilidad</a></li>
+          <li><a href="#enlaces">Enlaces a terceros</a></li>
+          <li><a href="#tienda">Plataforma de venta externa</a></li>
+          <li><a href="#legislacion">Legislación aplicable</a></li>
+        </ol>
+      </aside>
+
+      <!-- Artículos -->
+      <div class="legal-content">
+
+        <div class="legal-box">
+          <p>El acceso y uso de este sitio web implica la aceptación de las condiciones recogidas en este aviso legal. Si no estás de acuerdo con alguna de ellas, te rogamos que no utilices el sitio.</p>
+        </div>
+
+        <!-- 1 -->
+        <article class="legal-art" id="titular">
+          <span class="art-num">01</span>
+          <h2>Titular del sitio web</h2>
+          <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), se informa de los siguientes datos identificativos:</p>
+          <ul>
+            <li><strong>Titular:</strong> Jose Morales López</li>
+            <li><strong>Actividad:</strong> Fotógrafo profesional — jmlfoto</li>
+            <li><strong>Domicilio:</strong> Madrid, España</li>
+            <li><strong>Correo electrónico:</strong> <a href="mailto:jose@jmlfoto.es">jose@jmlfoto.es</a></li>
+            <li><strong>Sitio web:</strong> <a href="https://jmlfoto.es" target="_blank" rel="noopener">jmlfoto.es</a></li>
+          </ul>
+        </article>
+
+        <!-- 2 -->
+        <article class="legal-art" id="objeto">
+          <span class="art-num">02</span>
+          <h2>Objeto y aceptación</h2>
+          <p>Este sitio web tiene por objeto presentar la actividad profesional de Jose Morales López como fotógrafo, documentalista y autor, y facilitar el contacto con posibles clientes, colaboradores y personas interesadas en su trabajo.</p>
+          <p>El acceso al sitio web es libre y gratuito. Su uso implica la aceptación plena y sin reservas de las presentes condiciones legales, que podrán ser modificadas en cualquier momento sin previo aviso. La versión vigente será siempre la publicada en esta misma página.</p>
+        </article>
+
+        <!-- 3 -->
+        <article class="legal-art" id="propiedad">
+          <span class="art-num">03</span>
+          <h2>Propiedad intelectual e industrial</h2>
+          <p>Todos los contenidos de este sitio web — incluyendo, sin carácter limitativo, fotografías, textos, diseño gráfico, logotipos, código fuente y estructura — son propiedad de Jose Morales López o de terceros que han autorizado su uso, y están protegidos por la legislación española e internacional sobre propiedad intelectual e industrial.</p>
+          <p>Queda expresamente prohibido:</p>
+          <ul>
+            <li>Reproducir, distribuir, comunicar públicamente o transformar cualquier contenido de este sitio sin autorización expresa y por escrito del titular.</li>
+            <li>Descargar, copiar o usar las fotografías publicadas para cualquier fin, comercial o no, sin autorización previa.</li>
+            <li>Eliminar o alterar cualquier aviso de derechos de autor, marca registrada u otra mención sobre la titularidad de los contenidos.</li>
+          </ul>
+          <p>Para solicitar autorizaciones de uso o licencias, contacta en <a href="mailto:jose@jmlfoto.es">jose@jmlfoto.es</a>.</p>
+        </article>
+
+        <!-- 4 -->
+        <article class="legal-art" id="contenidos">
+          <span class="art-num">04</span>
+          <h2>Contenidos y uso permitido</h2>
+          <p>El usuario se compromete a hacer un uso lícito de los contenidos y servicios disponibles en este sitio web, de conformidad con la legislación vigente, la buena fe y el orden público.</p>
+          <p>Queda prohibido utilizar este sitio web o sus contenidos con fines ilícitos, lesivos para los derechos de terceros o que puedan dañar, deshabilitar o deteriorar el sitio web o impedir su normal utilización.</p>
+          <p>Se permite compartir enlaces a contenidos de este sitio en redes sociales y otras plataformas, siempre que se indique la autoría y no se distorsione ni descontextualice el contenido original.</p>
+        </article>
+
+        <!-- 5 -->
+        <article class="legal-art" id="responsabilidad">
+          <span class="art-num">05</span>
+          <h2>Limitación de responsabilidad</h2>
+          <p>Jose Morales López no garantiza la disponibilidad continua e ininterrumpida del sitio web, ni que este esté libre de errores. Se reserva el derecho de suspender, modificar o interrumpir el acceso temporal o definitivamente, sin previo aviso y sin responsabilidad de ningún tipo.</p>
+          <p>El titular no será responsable de los daños y perjuicios de cualquier naturaleza que pudieran derivarse del uso del sitio web, incluyendo fallos técnicos, virus informáticos, interrupciones en la red o uso indebido de los contenidos por parte de terceros.</p>
+          <p>La información contenida en este sitio tiene carácter meramente informativo y orientativo. No constituye asesoramiento profesional de ningún tipo.</p>
+        </article>
+
+        <!-- 6 -->
+        <article class="legal-art" id="enlaces">
+          <span class="art-num">06</span>
+          <h2>Enlaces a sitios de terceros</h2>
+          <p>Este sitio web puede contener enlaces a páginas de terceros (redes sociales, plataformas externas, medios de comunicación, etc.). Estos enlaces se facilitan únicamente a título informativo.</p>
+          <p>Jose Morales López no tiene control sobre el contenido de esos sitios ni asume responsabilidad alguna por los daños o perjuicios que pudieran derivarse del acceso a ellos. El usuario accede a dichos sitios bajo su propia responsabilidad.</p>
+        </article>
+
+        <!-- 7 -->
+        <article class="legal-art" id="tienda">
+          <span class="art-num">07</span>
+          <h2>Plataforma de venta externa</h2>
+          <p>La compra de copias fotográficas se realiza a través de la plataforma <strong>Saal Digital</strong> (<a href="https://photo-portal.shop/profiles/jmlfoto/" target="_blank" rel="noopener noreferrer">photo-portal.shop</a>), que opera de forma completamente independiente a este sitio web.</p>
+          <p>Las transacciones económicas, los datos de pago, las condiciones de compra, los plazos de entrega y las posibles reclamaciones derivadas de la adquisición de productos están sujetas exclusivamente a los términos y condiciones de Saal Digital. Jose Morales López no interviene en el procesamiento de pagos ni tiene acceso a los datos de pago de los compradores.</p>
+          <p>Para cualquier incidencia relacionada con un pedido, debes contactar directamente con Saal Digital a través de su plataforma.</p>
+        </article>
+
+        <!-- 8 -->
+        <article class="legal-art" id="legislacion">
+          <span class="art-num">08</span>
+          <h2>Legislación aplicable y jurisdicción</h2>
+          <p>Este aviso legal se rige por la legislación española vigente, en particular:</p>
+          <ul>
+            <li>Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE).</li>
+            <li>Real Decreto Legislativo 1/1996, de 12 de abril, por el que se aprueba el Texto Refundido de la Ley de Propiedad Intelectual.</li>
+            <li>Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD).</li>
+            <li>Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y Garantía de los Derechos Digitales (LOPDGDD).</li>
+          </ul>
+          <p>Para la resolución de cualquier controversia derivada del acceso o uso de este sitio web, las partes se someten a los juzgados y tribunales de la ciudad de Madrid, con renuncia expresa a cualquier otro fuero que pudiera corresponderles.</p>
+        </article>
+
+      </div><!-- /legal-content -->
+    </div><!-- /legal-body -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">jmlfoto</span>
+        <span class="footer-copy">© 2026 Jose Morales · Madrid</span>
+      </div>
+      <nav class="footer-nav" aria-label="Navegación footer">
+        <a href="https://jmlfoto.es" target="_blank" rel="noopener">Blog</a>
+        <a href="https://gwendal.es" target="_blank" rel="noopener">Gwendal</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="aviso-legal.html" aria-current="page">Aviso legal</a>
+      </nav>
+    </div>
+  </footer>
+<script src="cookies.js"></script>
+</body>
+</html>
