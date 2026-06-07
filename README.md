@@ -74,7 +74,7 @@ Solo tienes que subir los archivos con esos nombres exactos.
 ### Portfolio
 Busca en index.html el bloque `.port-img` y sustituye el div placeholder:
 ```html
-<!-- Antes -->
+<!-- Antes hecho-->
 <div class="img-ph">...</div>
 
 <!-- Después -->
