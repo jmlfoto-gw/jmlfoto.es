@@ -415,7 +415,7 @@ const initCounters = () => {
           const text = el.textContent;
           if (text.includes('40+')) animateNum(el, 40, '+', 1200);
           if (text.includes('20+')) animateNum(el, 20, '+', 900);
-          if (text === '2')         animateNum(el, 2, '', 600);
+          if (text === '3')         animateNum(el, 3, '', 600);
           obs.unobserve(el);
         }
       });
