@@ -265,27 +265,36 @@ const initParallax = () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (window.matchMedia('(max-width: 768px)').matches) return;
 
+  const slides = hero.querySelector('.hero-slides');
+  const content = hero.querySelector('.hero-content');
+  if (!slides && !content) return;
+
   let ticking = false;
+
+  const updateParallax = () => {
+    const y = window.scrollY;
+
+    if (y < window.innerHeight) {
+      if (slides) {
+        slides.style.transform = `translateY(${y * 0.18}px) scale(1.02)`;
+      }
+
+      if (content) {
+        content.style.transform = `translateY(${y * 0.10}px)`;
+        content.style.opacity = Math.max(0, 1 - y / (window.innerHeight * 0.7));
+      }
+    }
+
+    ticking = false;
+  };
+
   window.addEventListener('scroll', () => {
     if (!ticking) {
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        if (y < window.innerHeight) {
-          const wrap = hero.querySelector('.hero-img-wrap');
-          const content = hero.querySelector('.hero-content');
-          if (wrap) wrap.style.transform = `translateY(${y * 0.3}px)`;
-          if (content) {
-            content.style.transform = `translateY(${y * 0.1}px)`;
-            content.style.opacity = Math.max(0, 1 - y / (window.innerHeight * 0.7));
-          }
-        }
-        ticking = false;
-      });
+      requestAnimationFrame(updateParallax);
       ticking = true;
     }
   }, { passive: true });
 };
-
 
 /* ─── CURSOR LÍNEA ──────────────────────────────────────────── */
 const initCursor = () => {
@@ -412,10 +421,12 @@ const initCounters = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const el   = entry.target;
-          const text = el.textContent;
+          const text = el.textContent.trim();
+
           if (text.includes('40+')) animateNum(el, 40, '+', 1200);
-          if (text.includes('20+')) animateNum(el, 20, '+', 900);
-          if (text === '3')         animateNum(el, 3, '', 600);
+          if (text.includes('20+')) animateNum(el, 20, '+', 1200);
+          if (text === '3')         animateNum(el, 3, '', 1800);
+
           obs.unobserve(el);
         }
       });

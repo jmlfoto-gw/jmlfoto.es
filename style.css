@@ -252,11 +252,11 @@ p:last-child { margin-bottom: 0; }
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.05em;
-  color: var(--c-black);
-  transition: opacity var(--t);
+  color: rgba(255, 255, 255, 0.92);
+  transition: color var(--t), opacity var(--t);
 }
 
-.nav-logo:hover { opacity: 0.5; }
+.nav-logo:hover { opacity: 0.7; }
 
 .nav-menu {
   display: flex;
@@ -270,8 +270,8 @@ p:last-child { margin-bottom: 0; }
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--c-grey-2);
-  transition: color var(--t);
+  color: rgba(255, 255, 255, 0.82);
+  transition: color var(--t), opacity var(--t);
   position: relative;
 }
 
@@ -282,11 +282,13 @@ p:last-child { margin-bottom: 0; }
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--c-black);
+  background: rgba(255, 255, 255, 0.92);
   transition: width var(--t);
 }
 
-.nav-link:hover { color: var(--c-black); }
+.nav-link:hover { 
+  color: rgba(255, 255, 255, 1); 
+}
 .nav-link:hover::after { width: 100%; }
 
 .nav-toggle {
@@ -300,8 +302,28 @@ p:last-child { margin-bottom: 0; }
   display: block;
   width: 22px;
   height: 1px;
-  background: var(--c-black);
+  background: rgba(255, 255, 255, 0.92);
   transition: all var(--t);
+}
+
+.nav.scrolled .nav-logo {
+  color: var(--c-black);
+}
+
+.nav.scrolled .nav-link {
+  color: var(--c-grey-2);
+}
+
+.nav.scrolled .nav-link:hover {
+  color: var(--c-black);
+}
+
+.nav.scrolled .nav-link::after {
+  background: var(--c-black);
+}
+
+.nav.scrolled .nav-toggle span {
+  background: var(--c-black);
 }
 
 /* ─── HERO ───────────────────────────────────────────────────── */
@@ -357,11 +379,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 .hero-name {
-  font-family: var(--f-display);
+  font-family: 'Marcellus', serif;
   font-size: var(--fs-hero);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--c-white);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   line-height: 1;
   margin-bottom: 1.5rem;
   animation: fadeUp 1.2s ease 0.4s both;

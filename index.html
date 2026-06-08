@@ -29,7 +29,7 @@
   <!-- SEO -->
 <title>Jose Morales · jmlfoto · Fotógrafo de Conciertos, Naturaleza y Patrimonio · Madrid</title>
 <meta name="description"
-  content="Fotógrafo profesional en Madrid especializado en conciertos, naturaleza, patrimonio histórico y proyectos documentales. Autor del libro Gwendal, 50 años de música celta." />
+  content="José Morales es fotógrafo profesional en Madrid, especializado en conciertos, naturaleza, patrimonio histórico y proyectos documentales. Más de 40 años creando imágenes con mirada de autor. Autor del libro Gwendal, 50 años de música celta y de Luz entre sombras: La guía profesional para dominar la fotografía de conciertos." />
 <meta name="author" content="Jose Morales · jmlfoto" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://jmlfoto.es/" />
@@ -58,40 +58,65 @@
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Jose Morales",
-    "alternateName": "jmlfoto",
-    "jobTitle": "Fotógrafo profesional",
-    "description": "Fotógrafo especializado en conciertos, naturaleza, patrimonio histórico y proyectos documentales. Autor del libro Gwendal, 50 años de música celta.",
-    "url": "https://jmlfoto.es/",
-    "image": "https://jmlfoto.es/assets/img/og-jmlfoto.jpg",
-    "sameAs": [
-      "https://www.instagram.com/jmlfoto",
-      "https://www.facebook.com/jmlfoto",
-      "https://twitter.com/jmlfoto",
-      "https://www.youtube.com/@jmlfoto-es"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Madrid",
-      "addressCountry": "ES"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://jmlfoto.es/#jose-morales",
+      "name": "José Morales",
+      "alternateName": "jmlfoto",
+      "jobTitle": "Fotógrafo profesional",
+      "description": "José Morales es fotógrafo profesional en Madrid, especializado en conciertos, naturaleza, patrimonio histórico y proyectos documentales. Más de 40 años creando imágenes con mirada de autor. Autor del libro Gwendal, 50 años de música celta y de Luz entre sombras: La guía profesional para dominar la fotografía de conciertos.",
+      "url": "https://jmlfoto.es/",
+      "image": "https://jmlfoto.es/assets/img/og-jmlfoto.jpg",
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Madrid, España"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madrid",
+        "addressCountry": "ES"
+      },
+      "sameAs": [
+        "https://www.instagram.com/jmlfoto",
+        "https://www.facebook.com/jmlfoto",
+        "https://twitter.com/jmlfoto",
+        "https://www.youtube.com/@jmlfoto-es"
+      ],
+      "knowsAbout": [
+        "Fotografía de conciertos",
+        "Fotografía de naturaleza",
+        "Patrimonio histórico",
+        "Fotografía documental",
+        "Fotografía de viajes",
+        "Fotografía con dron"
+      ]
     },
-    "knowsAbout": [
-      "Fotografía de conciertos",
-      "Fotografía de naturaleza",
-      "Patrimonio histórico",
-      "Fotografía documental",
-      "Pilotaje de dron"
-    ]
-  }
-  </script>
+    {
+      "@type": "WebSite",
+      "@id": "https://jmlfoto.es/#website",
+      "url": "https://jmlfoto.es/",
+      "name": "jmlfoto",
+      "description": "Web oficial de José Morales, fotógrafo de conciertos, naturaleza y patrimonio en Madrid.",
+      "inLanguage": "es",
+      "publisher": {
+        "@id": "https://jmlfoto.es/#jose-morales"
+      },
+      "about": {
+        "@id": "https://jmlfoto.es/#jose-morales"
+      }
+    }
+  ]
+}
+</script>
 
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
 
@@ -134,10 +159,11 @@
 
     <!-- Slideshow de imágenes -->
     <div class="hero-slides" aria-hidden="true">
-      <div class="hero-slide active" style="background-image: url('assets/img/hero-01.jpg')"></div>
-      <div class="hero-slide" style="background-image: url('assets/img/hero-02.jpg')"></div>
-      <div class="hero-slide" style="background-image: url('assets/img/hero-03.jpg')"></div>
-      <div class="hero-slide" style="background-image: url('assets/img/hero-04.jpg')"></div>
+      <link rel="preload" as="image" href="assets/img/hero-01.webp">
+      <div class="hero-slide active" style="background-image: url('assets/img/hero-01.webp');"></div>
+      <div class="hero-slide" style="background-image: url('assets/img/hero-02.webp');"></div>
+      <div class="hero-slide" style="background-image: url('assets/img/hero-03.webp');"></div>
+      <div class="hero-slide" style="background-image: url('assets/img/hero-04.webp');"></div>
     </div>
 
     <!-- Capa oscura sobre las fotos -->
