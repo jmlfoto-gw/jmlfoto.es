@@ -494,7 +494,74 @@ const initPortHover = () => {
 ──────────────────────────────────────────────────────────────── */
 
 
-/* ─── ACCESIBILIDAD ─────────────────────────────────────────── */
+/* ─── MENÚ DESPLEGABLE (móvil: tap para abrir/cerrar) ───────── */
+const initDropdown = () => {
+  const drops = $$('.nav-item-drop');
+  if (!drops.length) return;
+
+  drops.forEach(drop => {
+    const trigger  = drop.querySelector('.nav-link-drop');
+    const menu     = drop.querySelector('.nav-dropdown');
+    const navMenu  = $('#nav-menu');
+    const toggle   = $('#nav-toggle');
+    if (!trigger || !menu) return;
+
+    // Móvil: tap en el enlace padre abre/cierra el submenú
+    trigger.addEventListener('click', (e) => {
+      if (window.innerWidth > 768) return; // en escritorio lo gestiona el CSS hover
+      e.preventDefault();
+      const open = drop.classList.toggle('drop-open');
+      trigger.setAttribute('aria-expanded', open);
+    });
+
+    // En móvil, al pinchar un enlace hijo cerramos todo el menú
+    menu.querySelectorAll('.nav-drop-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth > 768) return;
+        drop.classList.remove('drop-open');
+        trigger.setAttribute('aria-expanded', 'false');
+        navMenu?.classList.remove('open');
+        toggle?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        toggle?.querySelectorAll('span').forEach(s => s.style.cssText = '');
+      });
+    });
+  });
+
+  // Cierra al hacer clic fuera (escritorio)
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) return;
+    drops.forEach(drop => {
+      if (!drop.contains(e.target)) {
+        drop.querySelector('.nav-link-drop')?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+};
+
+/* ─── NEWSLETTER (Brevo) ────────────────────────────────────── */
+const initNewsletter = () => {
+  const form = $('#nl-form');
+  const ok   = $('#nl-ok');
+  const err  = $('#nl-err');
+  if (!form) return;
+
+  const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+form.addEventListener('submit', e => {
+  const emailField = form.querySelector('#nl-email');
+
+  if (ok) ok.hidden = true;
+  if (err) err.hidden = true;
+
+  if (!isEmail(emailField.value)) {
+    e.preventDefault();
+    emailField.style.color = '#e07070';
+    emailField.focus();
+    setTimeout(() => emailField.style.color = '', 2000);
+  }
+});
+};
+
 const initA11y = () => {
   // Skip to main
   const skip = document.createElement('a');
@@ -533,10 +600,17 @@ const injectActiveStyle = () => {
   const style = document.createElement('style');
   style.textContent = `
     .nav-link.active {
-      color: #0d0d0d;
+      color: rgba(255, 255, 255, 1);
     }
     .nav-link.active::after {
       width: 100%;
+      background: rgba(255, 255, 255, 0.92);
+    }
+    .nav.scrolled .nav-link.active {
+      color: #0d0d0d;
+    }
+    .nav.scrolled .nav-link.active::after {
+      background: #0d0d0d;
     }
     .keyboard-nav *:focus {
       outline: 1.5px solid #0d0d0d !important;
@@ -613,6 +687,7 @@ const initSlideshow = () => {
 };
 
 onReady(() => {
+  initDropdown();
   initSlideshow();
   initNav();
   initSmoothScroll();
@@ -620,6 +695,7 @@ onReady(() => {
   initParallax();
   initBackToTop();
   initForm();
+  initNewsletter();
   initCursor();
   initProgress();
   initLazyLoad();
