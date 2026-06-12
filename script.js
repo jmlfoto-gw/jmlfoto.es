@@ -562,6 +562,79 @@ form.addEventListener('submit', e => {
 });
 };
 
+/* ─── BLOG · feed dinámico desde WordPress ──────────────────── */
+const initBlogFeed = () => {
+  const cont = $('#blog-lista');
+  if (!cont) return;
+
+  const WP_API = 'https://jmlfoto.wordpress.com/wp-json/wp/v2/posts?_embed&per_page=3';
+
+  const formatDate = (iso) => {
+    const d = new Date(iso);
+    return d.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+  };
+
+  const stripHtml = (html) => {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return (tmp.textContent || '').trim();
+  };
+
+  fetch(WP_API)
+    .then(res => {
+      if (!res.ok) throw new Error('WP API error');
+      return res.json();
+    })
+    .then(posts => {
+      if (!Array.isArray(posts) || !posts.length) throw new Error('Sin entradas');
+
+      cont.innerHTML = posts.map(post => {
+        const title   = stripHtml(post.title?.rendered || '');
+        const excerpt = stripHtml(post.excerpt?.rendered || '').slice(0, 140) + '…';
+        const dateIso = post.date;
+        const dateTxt = formatDate(post.date);
+        const link    = post.link;
+
+        const media = post._embedded?.['wp:featuredmedia']?.[0];
+        const img   = media?.source_url || 'assets/img/blog-01.jpg';
+
+        const terms = post._embedded?.['wp:term']?.[0] || [];
+        const cat   = terms.length ? terms[0].name : 'Blog';
+
+        return `
+          <article class="blog-item reveal">
+            <a href="${link}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="blog-link"
+               aria-label="Leer entrada: ${title}">
+              <div class="blog-img">
+                <img src="${img}" alt="${title}" loading="lazy" />
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <span class="blog-cat">${cat}</span>
+                  <time datetime="${dateIso}">${dateTxt}</time>
+                </div>
+                <h3>${title}</h3>
+                <p>${excerpt}</p>
+              </div>
+            </a>
+          </article>
+        `;
+      }).join('');
+
+      if (typeof initReveal === 'function') initReveal();
+    })
+    .catch(() => {
+      cont.innerHTML = `
+        <p class="blog-feed-error">
+          No se han podido cargar las últimas entradas.
+          <a href="https://jmlfoto.wordpress.com" target="_blank" rel="noopener noreferrer">Visita el blog →</a>
+        </p>`;
+    });
+};
+
 const initA11y = () => {
   // Skip to main
   const skip = document.createElement('a');
@@ -696,6 +769,7 @@ onReady(() => {
   initBackToTop();
   initForm();
   initNewsletter();
+  initBlogFeed();
   initCursor();
   initProgress();
   initLazyLoad();

@@ -1083,6 +1083,19 @@ p:last-child {
   overflow: hidden;
 }
 
+.blog-feed-error {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--c-grey-2);
+  padding: 2rem 0;
+  grid-column: 1 / -1;
+}
+
+.blog-feed-error a {
+  color: var(--c-black);
+  border-bottom: 1px solid var(--c-grey-3);
+}
+
 /* ─── COPIAS ─────────────────────────────────────────────────── */
 .copias {
   background: var(--c-grey-5);
