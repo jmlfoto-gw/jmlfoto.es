@@ -567,7 +567,7 @@ const initBlogFeed = () => {
   const cont = $('#blog-lista');
   if (!cont) return;
 
-  const WP_API = 'https://jmlfoto.wordpress.com/wp-json/wp/v2/posts?_embed&per_page=3';
+const WP_API = 'https://public-api.wordpress.com/wp/v2/sites/jmlfoto.wordpress.com/posts?_embed&per_page=3';
 
   const formatDate = (iso) => {
     const d = new Date(iso);
