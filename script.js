@@ -484,7 +484,7 @@ const initPortHover = () => {
   2. Copia uno de los <article class="blog-item"> existentes
   3. Actualiza:
      - href del enlace → URL de la entrada en WordPress
-     - src de la imagen → assets/img/blog-0X.jpg
+     - src de la imagen → assets/img/blog-0X.webp
      - class="blog-cat" → categoría
      - datetime y texto de <time> → fecha
      - <h3> → título de la entrada
@@ -596,7 +596,7 @@ const WP_API = 'https://public-api.wordpress.com/wp/v2/sites/jmlfoto.wordpress.c
         const link    = post.link;
 
         const media = post._embedded?.['wp:featuredmedia']?.[0];
-        const img   = media?.source_url || 'assets/img/blog-01.jpg';
+        const img   = media?.source_url || 'assets/img/blog-01.webp';
 
         const terms = post._embedded?.['wp:term']?.[0] || [];
         const cat   = terms.length ? terms[0].name : 'Blog';
