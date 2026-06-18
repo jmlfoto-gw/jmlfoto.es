@@ -13,7 +13,6 @@ const onReady = (fn) => {
   else document.addEventListener('DOMContentLoaded', fn);
 };
 
-
 /* ─── NAVEGACIÓN ────────────────────────────────────────────── */
 const initNav = () => {
   const nav = $('#nav');
@@ -99,7 +98,7 @@ const initReveal = () => {
 
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const delay = parseInt(entry.target.dataset.delay || 0);
           setTimeout(() => {
@@ -112,7 +111,6 @@ const initReveal = () => {
     { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
   );
 
-  // Delays escalonados para elementos hermanos
   const parents = new Map();
   els.forEach(el => {
     const key = el.parentElement;
@@ -128,7 +126,6 @@ const initReveal = () => {
 
   els.forEach(el => observer.observe(el));
 };
-
 
 /* ─── SMOOTH SCROLL ─────────────────────────────────────────── */
 const initSmoothScroll = () => {
@@ -147,7 +144,6 @@ const initSmoothScroll = () => {
   });
 };
 
-
 /* ─── BACK TO TOP ───────────────────────────────────────────── */
 const initBackToTop = () => {
   const btn = $('#back-top');
@@ -162,16 +158,14 @@ const initBackToTop = () => {
   });
 };
 
-
 /* ─── FORMULARIO CONTACTO ───────────────────────────────────── */
 const initForm = () => {
   const form = $('#contacto-form');
-  const ok   = $('#form-ok');
+  const ok = $('#form-ok');
   if (!form) return;
 
   const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
-  // Limpia errores visuales
   const clearErrors = () => {
     form.querySelectorAll('.f-error').forEach(e => e.remove());
     form.querySelectorAll('.has-error').forEach(e => {
@@ -180,7 +174,6 @@ const initForm = () => {
     });
   };
 
-  // Muestra error bajo el campo
   const showError = (field, msg) => {
     const group = field.closest('.form-group');
     if (!group) return;
@@ -203,8 +196,8 @@ const initForm = () => {
     e.preventDefault();
     clearErrors();
 
-    const nombre  = form.querySelector('#f-nombre');
-    const email   = form.querySelector('#f-email');
+    const nombre = form.querySelector('#f-nombre');
+    const email = form.querySelector('#f-email');
     const mensaje = form.querySelector('#f-mensaje');
     let valid = true;
 
@@ -253,7 +246,6 @@ const initForm = () => {
   });
 };
 
-
 /* ─── PARALLAX LIGERO EN HERO ───────────────────────────────── */
 const initParallax = () => {
   const hero = $('.hero');
@@ -297,7 +289,6 @@ const initCursor = () => {
   if (window.matchMedia('(max-width: 768px)').matches) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  // Cursor minimalista: solo una línea vertical fina
   const cursor = document.createElement('div');
   cursor.setAttribute('aria-hidden', 'true');
   cursor.style.cssText = `
@@ -326,7 +317,6 @@ const initCursor = () => {
     cursor.style.opacity = '0';
   });
 
-  // Engorda en hover sobre elementos interactivos
   $$('a, button, .port-item, .blog-link').forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.style.height = '40px';
@@ -342,12 +332,11 @@ const initCursor = () => {
     cx += (mx - cx) * 0.12;
     cy += (my - cy) * 0.12;
     cursor.style.left = `${cx}px`;
-    cursor.style.top  = `${cy}px`;
+    cursor.style.top = `${cy}px`;
     requestAnimationFrame(tick);
   };
   tick();
 };
-
 
 /* ─── BARRA DE PROGRESO DE LECTURA ─────────────────────────── */
 const initProgress = () => {
@@ -371,7 +360,6 @@ const initProgress = () => {
   }, { passive: true });
 };
 
-
 /* ─── LAZY LOAD imágenes con data-src ───────────────────────── */
 const initLazyLoad = () => {
   const imgs = $$('img[data-src]');
@@ -394,7 +382,6 @@ const initLazyLoad = () => {
   imgs.forEach(img => obs.observe(img));
 };
 
-
 /* ─── CONTADOR ANIMADO en Sobre mí ─────────────────────────── */
 const initCounters = () => {
   const datos = $$('.dato strong');
@@ -416,12 +403,12 @@ const initCounters = () => {
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const el   = entry.target;
+          const el = entry.target;
           const text = el.textContent.trim();
 
           if (text.includes('40+')) animateNum(el, 40, '+', 1200);
           if (text.includes('20+')) animateNum(el, 20, '+', 1200);
-          if (text === '3')         animateNum(el, 3, '', 1800);
+          if (text === '3') animateNum(el, 3, '', 1800);
 
           obs.unobserve(el);
         }
@@ -433,7 +420,6 @@ const initCounters = () => {
   datos.forEach(el => obs.observe(el));
 };
 
-
 /* ─── HOVER EN PORTFOLIO: título aparece sobre la imagen ────── */
 const initPortHover = () => {
   const items = $$('.port-item');
@@ -443,7 +429,6 @@ const initPortHover = () => {
     const img = item.querySelector('.port-img');
     if (!img) return;
 
-    // Capa de texto sobre la imagen al hover
     const overlay = document.createElement('div');
     overlay.setAttribute('aria-hidden', 'true');
     const h3 = item.querySelector('h3');
@@ -479,21 +464,19 @@ const initDropdown = () => {
   if (!drops.length) return;
 
   drops.forEach(drop => {
-    const trigger  = drop.querySelector('.nav-link-drop');
-    const menu     = drop.querySelector('.nav-dropdown');
-    const navMenu  = $('#nav-menu');
-    const toggle   = $('#nav-toggle');
+    const trigger = drop.querySelector('.nav-link-drop');
+    const menu = drop.querySelector('.nav-dropdown');
+    const navMenu = $('#nav-menu');
+    const toggle = $('#nav-toggle');
     if (!trigger || !menu) return;
 
-    // Móvil: tap en el enlace padre abre/cierra el submenú
     trigger.addEventListener('click', (e) => {
-      if (window.innerWidth > 768) return; // en escritorio lo gestiona el CSS hover
+      if (window.innerWidth > 768) return;
       e.preventDefault();
       const open = drop.classList.toggle('drop-open');
       trigger.setAttribute('aria-expanded', open);
     });
 
-    // En móvil, al pinchar un enlace hijo cerramos todo el menú
     menu.querySelectorAll('.nav-drop-link').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth > 768) return;
@@ -502,12 +485,11 @@ const initDropdown = () => {
         navMenu?.classList.remove('open');
         toggle?.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
-        toggle?.querySelectorAll('span').forEach(s => s.style.cssText = '');
+        toggle?.classList.remove('is-open');
       });
     });
   });
 
-  // Cierra al hacer clic fuera (escritorio)
   document.addEventListener('click', (e) => {
     if (window.innerWidth <= 768) return;
     drops.forEach(drop => {
@@ -521,24 +503,24 @@ const initDropdown = () => {
 /* ─── NEWSLETTER (Brevo) ────────────────────────────────────── */
 const initNewsletter = () => {
   const form = $('#nl-form');
-  const ok   = $('#nl-ok');
-  const err  = $('#nl-err');
+  const ok = $('#nl-ok');
+  const err = $('#nl-err');
   if (!form) return;
 
   const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-form.addEventListener('submit', e => {
-  const emailField = form.querySelector('#nl-email');
+  form.addEventListener('submit', e => {
+    const emailField = form.querySelector('#nl-email');
 
-  if (ok) ok.hidden = true;
-  if (err) err.hidden = true;
+    if (ok) ok.hidden = true;
+    if (err) err.hidden = true;
 
-  if (!isEmail(emailField.value)) {
-    e.preventDefault();
-    emailField.style.color = '#e07070';
-    emailField.focus();
-    setTimeout(() => emailField.style.color = '', 2000);
-  }
-});
+    if (!isEmail(emailField.value)) {
+      e.preventDefault();
+      emailField.style.color = '#e07070';
+      emailField.focus();
+      setTimeout(() => emailField.style.color = '', 2000);
+    }
+  });
 };
 
 /* ─── BLOG · feed dinámico desde WordPress ──────────────────── */
@@ -546,7 +528,7 @@ const initBlogFeed = () => {
   const cont = $('#blog-lista');
   if (!cont) return;
 
-const WP_API = 'https://public-api.wordpress.com/wp/v2/sites/jmlfoto.wordpress.com/posts?_embed&per_page=4';
+  const WP_API = 'https://public-api.wordpress.com/wp/v2/sites/jmlfoto.wordpress.com/posts?_embed&per_page=4';
 
   const formatDate = (iso) => {
     const d = new Date(iso);
@@ -568,17 +550,17 @@ const WP_API = 'https://public-api.wordpress.com/wp/v2/sites/jmlfoto.wordpress.c
       if (!Array.isArray(posts) || !posts.length) throw new Error('Sin entradas');
 
       cont.innerHTML = posts.map(post => {
-        const title   = stripHtml(post.title?.rendered || '');
+        const title = stripHtml(post.title?.rendered || '');
         const excerpt = stripHtml(post.excerpt?.rendered || '').slice(0, 140) + '…';
         const dateIso = post.date;
         const dateTxt = formatDate(post.date);
-        const link    = post.link;
+        const link = post.link;
 
         const media = post._embedded?.['wp:featuredmedia']?.[0];
-        const img   = media?.source_url || 'assets/img/blog-01.webp';
+        const img = media?.source_url || 'assets/img/blog-01.webp';
 
         const terms = post._embedded?.['wp:term']?.[0] || [];
-        const cat   = terms.length ? terms[0].name : 'Blog';
+        const cat = terms.length ? terms[0].name : 'Blog';
 
         return `
           <article class="blog-item reveal">
@@ -614,9 +596,6 @@ const WP_API = 'https://public-api.wordpress.com/wp/v2/sites/jmlfoto.wordpress.c
     });
 };
 
-
-
-/* ─── INIT ──────────────────────────────────────────────────── */
 /* ─── HERO SLIDESHOW ────────────────────────────────────────── */
 const initSlideshow = () => {
   const slides = $$('.hero-slide');
@@ -627,11 +606,9 @@ const initSlideshow = () => {
   let interval = null;
 
   const goTo = (index) => {
-    // Quita activo de todos
     slides[current].classList.remove('active');
     dots[current]?.classList.remove('active');
 
-    // Activa el nuevo
     current = (index + slides.length) % slides.length;
     slides[current].classList.add('active');
     dots[current]?.classList.add('active');
@@ -639,21 +616,18 @@ const initSlideshow = () => {
 
   const next = () => goTo(current + 1);
 
-  // Arranca el temporizador
-    const start = () => {
-      clearInterval(interval);
-      interval = setInterval(next, 5500); // cambia cada 5.5 segundos
-    };
+  const start = () => {
+    clearInterval(interval);
+    interval = setInterval(next, 5500);
+  };
   const stop = () => clearInterval(interval);
 
   start();
 
-  // Pausa cuando la pestaña no está visible
   document.addEventListener('visibilitychange', () => {
     document.hidden ? stop() : start();
   });
 
-  // Clic en los puntos para navegar
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
       stop();
@@ -662,7 +636,6 @@ const initSlideshow = () => {
     });
   });
 
-  // Swipe táctil en móvil
   let touchX = 0;
   const hero = $('.hero');
   if (hero) {
@@ -681,6 +654,7 @@ const initSlideshow = () => {
   }
 };
 
+/* ─── INIT ──────────────────────────────────────────────────── */
 onReady(() => {
   initDropdown();
   initSlideshow();
