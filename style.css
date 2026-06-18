@@ -1664,3 +1664,20 @@ p:last-child {
     right: 1rem;
   }
 }
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.75rem 1rem;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  z-index: 9999;
+  transform: translateY(-120%);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
