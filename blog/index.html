@@ -1,0 +1,39 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<section class="section blog-index">
+  <div class="container" style="padding-top: 7rem; padding-bottom: 5rem;">
+    <div class="section-head">
+      <div>
+        <span class="label">Cuaderno editorial</span>
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin: 0;">Blog</h1>
+      </div>
+    </div>
+
+    <div class="blog-lista">
+      {% for post in site.posts %}
+      <article class="blog-item">
+        <a href="{{ post.url }}" class="blog-link">
+          {% if post.image %}
+          <div class="blog-img">
+            <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy" />
+          </div>
+          {% endif %}
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-cat">{% if post.categories and post.categories[0] %}{{ post.categories[0] }}{% else %}Blog{% endif %}</span>
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+            </div>
+            <h3>{{ post.title }}</h3>
+            {% if post.excerpt %}
+            <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

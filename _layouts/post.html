@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<section class="section blog-post">
+  <div class="container" style="max-width: 860px; padding-top: 8rem; padding-bottom: 5rem;">
+    <p class="label">Blog</p>
+    <h1 style="font-family: var(--f-display); font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.05; margin-bottom: 1rem;">{{ page.title }}</h1>
+    <p style="font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-grey-2); margin-bottom: 2.5rem;">
+      {{ page.date | date: "%d.%m.%Y" }}{% if page.author %} · {{ page.author }}{% endif %}
+    </p>
+
+    {% if page.image %}
+    <figure style="margin-bottom: 2.5rem;">
+      <img src="{{ page.image }}" alt="{{ page.title }}" style="width: 100%; height: auto; border-radius: 2px;" />
+    </figure>
+    {% endif %}
+
+    <article class="post-content" style="font-size: 1.02rem; color: var(--c-grey-1); line-height: 1.85;">
+      {{ content }}
+    </article>
+
+    <p style="margin-top: 3rem;">
+      <a href="/blog/" class="btn-copias">← Volver al blog</a>
+    </p>
+  </div>
+</section>
