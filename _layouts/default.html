@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <main>
+  {% include header.html %}
+
+  <main id="main-content" tabindex="-1">
     {{ content }}
   </main>
 </body>
