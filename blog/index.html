@@ -6,18 +6,13 @@ permalink: /blog/
 
 <section class="blog-hero section">
   <div class="container">
-    <div class="blog-hero-grid reveal revealed">
-      <div class="blog-hero-copy">
-        <span class="label">Cuaderno editorial</span>
-        <h1>Historias, territorio y mirada <em>personal</em></h1>
-        <p class="blog-hero-lead">
-          Un espacio para reunir artículos sobre patrimonio, fotografía, naturaleza, conciertos,
-          viajes y lugares que merecen ser contados con tiempo.
-        </p>
-      </div>
-      <div class="blog-hero-image">
-        <img src="/assets/img/blog-01.webp" alt="Imagen de portada del blog de jmlfoto" loading="eager" />
-      </div>
+    <div class="blog-hero-copy reveal revealed">
+      <span class="label">Cuaderno editorial</span>
+      <h1>Historias, territorio y mirada <em>personal</em></h1>
+      <p class="blog-hero-lead">
+        Un espacio para reunir artículos sobre patrimonio, fotografía, naturaleza,
+        conciertos, viajes y lugares que merecen ser contados con tiempo.
+      </p>
     </div>
   </div>
 </section>
@@ -36,9 +31,6 @@ permalink: /blog/
       {% if first_post %}
       <article class="blog-featured-item blog-item">
         <a href="{{ first_post.url }}" class="blog-featured-link">
-          <div class="blog-featured-img">
-            <img src="{{ first_post.image | default: '/assets/img/blog-01.webp' }}" alt="{{ first_post.title }}" loading="lazy" />
-          </div>
           <div class="blog-featured-body">
             <div class="blog-meta">
               <span class="blog-cat">{% if first_post.categories and first_post.categories[0] %}{{ first_post.categories[0] }}{% else %}Blog{% endif %}</span>
@@ -59,9 +51,6 @@ permalink: /blog/
       {% for post in site.posts offset:1 %}
       <article class="blog-card">
         <a href="{{ post.url }}" class="blog-card-link">
-          <div class="blog-card-img">
-            <img src="{{ post.image | default: '/assets/img/blog-01.webp' }}" alt="{{ post.title }}" loading="lazy" />
-          </div>
           <div class="blog-card-body">
             <div class="blog-meta">
               <span class="blog-cat">{% if post.categories and post.categories[0] %}{{ post.categories[0] }}{% else %}Blog{% endif %}</span>
