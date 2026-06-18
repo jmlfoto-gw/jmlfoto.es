@@ -25,6 +25,9 @@ La web reúne portfolio fotográfico, proyectos editoriales, blog, contacto y ac
 - `cookies.js`: gestión de consentimiento y scripts asociados.
 - `privacidad.html`: política de privacidad.
 - `aviso-legal.html`: aviso legal.
+- `robots.txt`: directrices para rastreadores.
+- `sitemap.xml`: mapa del sitio.
+- `CNAME`: dominio personalizado.
 - `assets/`: imágenes y recursos gráficos.
 
 ## Estructura de carpetas

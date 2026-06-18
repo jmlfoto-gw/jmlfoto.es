@@ -35,15 +35,7 @@ const initNav = () => {
       toggle.setAttribute('aria-expanded', open);
       document.body.style.overflow = open ? 'hidden' : '';
 
-      // Anima las dos líneas del toggle → X
-      const spans = toggle.querySelectorAll('span');
-      if (open) {
-        spans[0].style.cssText = 'transform: translateY(7px) rotate(45deg)';
-        spans[1].style.cssText = 'transform: translateY(-7px) rotate(-45deg)';
-      } else {
-        spans[0].style.cssText = '';
-        spans[1].style.cssText = '';
-      }
+    toggle.classList.toggle('is-open', open);
     });
 
     // Cierra al hacer clic en un enlace
@@ -52,7 +44,7 @@ const initNav = () => {
         menu.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
-        toggle.querySelectorAll('span').forEach(s => s.style.cssText = '');
+    toggle.classList.remove('is-open');
       });
     });
 
@@ -62,7 +54,7 @@ const initNav = () => {
         menu.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
-        toggle.querySelectorAll('span').forEach(s => s.style.cssText = '');
+        toggle.classList.remove('is-open');
         toggle.focus();
       }
     });

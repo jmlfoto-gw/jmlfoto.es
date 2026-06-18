@@ -370,6 +370,39 @@ p:last-child {
   background: var(--c-black);
 }
 
+.nav-toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-toggle span {
+  position: absolute;
+  left: 5px;
+  width: 22px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.92);
+  transition: transform var(--t), opacity var(--t), background var(--t);
+}
+
+.nav-toggle span:first-child {
+  transform: translateY(-4px);
+}
+
+.nav-toggle span:last-child {
+  transform: translateY(4px);
+}
+
+.nav-toggle.is-open span:first-child {
+  transform: rotate(45deg);
+}
+
+.nav-toggle.is-open span:last-child {
+  transform: rotate(-45deg);
+}
+
 /* ─── MENÚ DESPLEGABLE ───────────────────────────────────────── */
 .nav-item-drop {
   position: relative;
