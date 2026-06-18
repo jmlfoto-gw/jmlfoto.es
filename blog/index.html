@@ -3,32 +3,73 @@ layout: default
 title: Blog
 permalink: /blog/
 ---
-<section class="section blog-index">
-  <div class="container" style="padding-top: 7rem; padding-bottom: 5rem;">
+
+<section class="blog-hero section">
+  <div class="container">
+    <div class="blog-hero-grid reveal revealed">
+      <div class="blog-hero-copy">
+        <span class="label">Cuaderno editorial</span>
+        <h1>Historias, territorio y mirada <em>personal</em></h1>
+        <p class="blog-hero-lead">
+          Un espacio para reunir artículos sobre patrimonio, fotografía, naturaleza, conciertos,
+          viajes y lugares que merecen ser contados con tiempo.
+        </p>
+      </div>
+      <div class="blog-hero-image">
+        <img src="/assets/img/blog-01.webp" alt="Imagen de portada del blog de jmlfoto" loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-index section">
+  <div class="container">
     <div class="section-head">
       <div>
-        <span class="label">Cuaderno editorial</span>
-        <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin: 0;">Blog</h1>
+        <span class="label">Artículos recientes</span>
+        <h2>Últimas publicaciones</h2>
       </div>
     </div>
 
-    <div class="blog-lista">
-      {% for post in site.posts %}
-      <article class="blog-item">
-        <a href="{{ post.url }}" class="blog-link">
-          {% if post.image %}
-          <div class="blog-img">
-            <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy" />
+    <div class="blog-featured">
+      {% assign first_post = site.posts.first %}
+      {% if first_post %}
+      <article class="blog-featured-item blog-item">
+        <a href="{{ first_post.url }}" class="blog-featured-link">
+          <div class="blog-featured-img">
+            <img src="{{ first_post.image | default: '/assets/img/blog-01.webp' }}" alt="{{ first_post.title }}" loading="lazy" />
           </div>
-          {% endif %}
-          <div class="blog-body">
+          <div class="blog-featured-body">
+            <div class="blog-meta">
+              <span class="blog-cat">{% if first_post.categories and first_post.categories[0] %}{{ first_post.categories[0] }}{% else %}Blog{% endif %}</span>
+              <time datetime="{{ first_post.date | date_to_xmlschema }}">{{ first_post.date | date: "%d.%m.%Y" }}</time>
+            </div>
+            <h3>{{ first_post.title }}</h3>
+            {% if first_post.excerpt %}
+            <p>{{ first_post.excerpt | strip_html | truncate: 220 }}</p>
+            {% endif %}
+            <span class="btn-copias">Leer artículo</span>
+          </div>
+        </a>
+      </article>
+      {% endif %}
+    </div>
+
+    <div class="blog-lista blog-lista-grid">
+      {% for post in site.posts offset:1 %}
+      <article class="blog-card">
+        <a href="{{ post.url }}" class="blog-card-link">
+          <div class="blog-card-img">
+            <img src="{{ post.image | default: '/assets/img/blog-01.webp' }}" alt="{{ post.title }}" loading="lazy" />
+          </div>
+          <div class="blog-card-body">
             <div class="blog-meta">
               <span class="blog-cat">{% if post.categories and post.categories[0] %}{{ post.categories[0] }}{% else %}Blog{% endif %}</span>
               <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
             </div>
             <h3>{{ post.title }}</h3>
             {% if post.excerpt %}
-            <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+            <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
             {% endif %}
           </div>
         </a>
