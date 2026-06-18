@@ -477,23 +477,6 @@ const initPortHover = () => {
   });
 };
 
-
-/* ─── INSTRUCCIONES: cómo actualizar el blog ─────────────────
-  Para añadir una entrada nueva al blog:
-  1. Busca el bloque <div class="blog-lista"> en index.html
-  2. Copia uno de los <article class="blog-item"> existentes
-  3. Actualiza:
-     - href del enlace → URL de la entrada en WordPress
-     - src de la imagen → assets/img/blog-0X.webp
-     - class="blog-cat" → categoría
-     - datetime y texto de <time> → fecha
-     - <h3> → título de la entrada
-     - <p> → extracto
-  4. Puedes tener 3-4 entradas visibles. Elimina la más antigua.
-  5. Guarda y sube a GitHub.
-──────────────────────────────────────────────────────────────── */
-
-
 /* ─── MENÚ DESPLEGABLE (móvil: tap para abrir/cerrar) ───────── */
 const initDropdown = () => {
   const drops = $$('.nav-item-drop');
@@ -635,63 +618,6 @@ const WP_API = 'https://public-api.wordpress.com/wp/v2/sites/jmlfoto.wordpress.c
     });
 };
 
-const initA11y = () => {
-  // Skip to main
-  const skip = document.createElement('a');
-  skip.href = '#sobre';
-  skip.textContent = 'Saltar al contenido';
-  skip.style.cssText = `
-    position: absolute;
-    top: -100px;
-    left: 1rem;
-    background: #0d0d0d;
-    color: #fafaf8;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    z-index: 9999;
-    transition: top 0.3s ease;
-    text-decoration: none;
-    border-radius: 1px;
-  `;
-  skip.addEventListener('focus', () => { skip.style.top = '1rem'; });
-  skip.addEventListener('blur',  () => { skip.style.top = '-100px'; });
-  document.body.prepend(skip);
-
-  // Clase keyboard-nav para foco visible
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') document.body.classList.add('keyboard-nav');
-  });
-  document.addEventListener('mousedown', () => {
-    document.body.classList.remove('keyboard-nav');
-  });
-};
-
-
-/* ─── NAV LINK ACTIVE STYLE ─────────────────────────────────── */
-const injectActiveStyle = () => {
-  const style = document.createElement('style');
-  style.textContent = `
-    .nav-link.active {
-      color: rgba(255, 255, 255, 1);
-    }
-    .nav-link.active::after {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.92);
-    }
-    .nav.scrolled .nav-link.active {
-      color: #0d0d0d;
-    }
-    .nav.scrolled .nav-link.active::after {
-      background: #0d0d0d;
-    }
-    .keyboard-nav *:focus {
-      outline: 1.5px solid #0d0d0d !important;
-      outline-offset: 3px !important;
-    }
-  `;
-  document.head.appendChild(style);
-};
 
 
 /* ─── INIT ──────────────────────────────────────────────────── */
@@ -718,10 +644,10 @@ const initSlideshow = () => {
   const next = () => goTo(current + 1);
 
   // Arranca el temporizador
-  const start = () => {
-    interval = setInterval(next, 5500); // cambia cada 5.5 segundos
-  };
-
+    const start = () => {
+      clearInterval(interval);
+      interval = setInterval(next, 5500); // cambia cada 5.5 segundos
+    };
   const stop = () => clearInterval(interval);
 
   start();
@@ -775,8 +701,6 @@ onReady(() => {
   initLazyLoad();
   initCounters();
   initPortHover();
-  initA11y();
-  injectActiveStyle();
 
   console.log(
     '%c jmlfoto · Jose Morales ',
