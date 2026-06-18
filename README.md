@@ -32,38 +32,36 @@ La web reúne portfolio fotográfico, proyectos editoriales, blog, contacto y ac
 
 ## Estructura de carpetas
 
-```text
-jmlfoto.es/
-├── index.html
-├── style.css
-├── script.js
-├── cookies.js
-├── privacidad.html
-├── aviso-legal.html
-├── robots.txt
-├── sitemap.xml
-├── CNAME
-├── .gitignore
-├── .gitattributes
-├── README.md
-└── assets/
-    └── img/
-        ├── hero-01.webp
-        ├── hero-02.webp
-        ├── hero-03.webp
-        ├── hero-04.webp
-        ├── retrato.webp
-        ├── portfolio-conciertos.webp
-        ├── portfolio-naturaleza.webp
-        ├── portfolio-patrimonio.webp
-        ├── portfolio-dron.webp
-        ├── proyecto-gwendal.webp
-        ├── blog-01.webp
-        ├── blog-02.webp
-        ├── blog-03.webp
-        ├── copias.webp
-        └── og-jmlfoto.webp
-```
+    jmlfoto.es/
+    ├── index.html
+    ├── style.css
+    ├── script.js
+    ├── cookies.js
+    ├── privacidad.html
+    ├── aviso-legal.html
+    ├── robots.txt
+    ├── sitemap.xml
+    ├── CNAME
+    ├── .gitignore
+    ├── .gitattributes
+    ├── README.md
+    └── assets/
+        └── img/
+            ├── hero-01.webp
+            ├── hero-02.webp
+            ├── hero-03.webp
+            ├── hero-04.webp
+            ├── retrato.webp
+            ├── portfolio-conciertos.webp
+            ├── portfolio-naturaleza.webp
+            ├── portfolio-patrimonio.webp
+            ├── portfolio-dron.webp
+            ├── proyecto-gwendal.webp
+            ├── blog-01.webp
+            ├── blog-02.webp
+            ├── blog-03.webp
+            ├── copias.webp
+            └── og-jmlfoto.webp
 
 ## Estado
 
