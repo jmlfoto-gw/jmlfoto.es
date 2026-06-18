@@ -1,5 +1,5 @@
 ---
-title: "EnveroFest 2026 · Jardines de Don Diego · 23 de mayo de 2026
+title: "EnveroFest 2026 · Jardines de Don Diego · 23 de mayo de 2026"
 date: 2026-05-23
 categories: [Conciertos]
 tags: [fotografía, conciertos, gwendal]
