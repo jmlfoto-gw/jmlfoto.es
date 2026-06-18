@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -162,8 +164,11 @@
 
 <link rel="stylesheet" href="style.css" />
 
+<link rel="preload" as="image" href="assets/img/hero-01.webp" />
+
 </head>
 <body>
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDFDLBF4" height="0" width="0"
@@ -171,8 +176,8 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- ── NAVEGACIÓN ─────────────────────────────────────────── -->
-  <header class="nav" id="nav" role="banner">
-    <nav class="nav-inner" aria-label="Navegación principal">
+      <header class="nav" id="nav">
+      <nav class="nav-inner" aria-label="Navegación principal">
 
       <a href="#inicio" class="nav-logo" aria-label="Jose Morales jmlfoto">
         jmlfoto
@@ -205,14 +210,13 @@
     </nav>
   </header>
 
-  <main>
+<main id="main-content" tabindex="-1">
 
   <!-- ── HERO ───────────────────────────────────────────────── -->
   <section class="hero" id="inicio" aria-label="Presentación">
 
     <!-- Slideshow de imágenes -->
     <div class="hero-slides" aria-hidden="true">
-      <link rel="preload" as="image" href="assets/img/hero-01.webp">
       <div class="hero-slide active" style="background-image: url('assets/img/hero-01.webp');"></div>
       <div class="hero-slide" style="background-image: url('assets/img/hero-02.webp');"></div>
       <div class="hero-slide" style="background-image: url('assets/img/hero-03.webp');"></div>
@@ -317,7 +321,7 @@
              rel="noopener noreferrer"
              aria-label="Portfolio de naturaleza y viajes">
             <div class="port-img">
-              <img src="assets/img/portfolio-naturaleza.webp" alt="Naturaleza" loading="lazy" />
+              <img src="assets/img/portfolio-naturaleza.webp" alt="Paisaje natural fotografiado por José Morales" loading="lazy" />
             </div>
             <div class="port-info">
               <h3>Naturaleza</h3>
@@ -332,7 +336,7 @@
              rel="noopener noreferrer"
              aria-label="Portfolio de patrimonio y documentales">
             <div class="port-img">
-              <img src="assets/img/portfolio-patrimonio.webp" alt="Patrimonio" loading="lazy" />
+              <img src="assets/img/portfolio-patrimonio.webp" alt="Lugar histórico documentado fotográficamente por José Morales" loading="lazy" />
             </div>
             <div class="port-info">
               <h3>Patrimonio</h3>
@@ -347,7 +351,7 @@
              rel="noopener noreferrer"
              aria-label="Vídeos de dron">
             <div class="port-img">
-              <img src="assets/img/portfolio-dron.webp" alt="Vídeos de dron" loading="lazy" />
+              <img src="assets/img/portfolio-dron.webp" alt="Vista aérea realizada con dron por José Morales" loading="lazy" />
             </div>
             <div class="port-info">
               <h3>Desde el aire</h3>
@@ -369,7 +373,7 @@
 
           <div class="proy-img">
             <div class="img-ph proy-ph" aria-label="Proyecto Gwendal">
-              <img src="assets/img/proyecto-gwendal.webp" alt="Proyecto Gwendal" loading="lazy" / >
+              <img src="assets/img/proyecto-gwendal.webp" alt="José Morales fotografiando a Gwendal en directo" loading="lazy" />
             </div>
           </div>
 
@@ -509,14 +513,13 @@
         <div class="section-head reveal">
           <span class="label">Últimas publicaciones</span>
           <h2 id="blog-title">Blog</h2>
-          <a href="https://jmlfoto.es"
-             class="ver-todo"
-             target="_blank"
-             rel="noopener noreferrer">
-            Ver todo →
-          </a>
+        <a href="https://jmlfoto.wordpress.com/"
+          class="ver-todo"
+          target="_blank"
+          rel="noopener noreferrer">
+          Ver todo →
+        </a>          
         </div>
-
         <div class="blog-lista" id="blog-lista">
           <!-- Las entradas se cargan automáticamente desde WordPress -->
         </div>
@@ -544,7 +547,7 @@
           </div>
           <div class="copias-img">
             <div class="img-ph copias-ph" aria-label="Copias fotográficas de autor">
-              <img src="assets/img/copias.webp" alt="Galeria de arte en tu hogar" loading="lazy" />
+              <img src="assets/img/copias.webp" alt="Selección de fotografías de autor disponibles en copia impresa" loading="lazy" />
             </div>
           </div>
         </div>
@@ -568,24 +571,32 @@
               <a href="mailto:jose@jmlfoto.es" class="contacto-email">jose@jmlfoto.es</a>
               <span class="contacto-lugar">Madrid, España</span>
             </div>
-            <div class="social-row" role="list" aria-label="Redes sociales">
-              <a href="https://www.instagram.com/jmlfoto"
-                 class="social-item" role="listitem"
-                 target="_blank" rel="noopener noreferrer"
-                 aria-label="Instagram">Ig</a>
-              <a href="https://www.facebook.com/jmlfoto"
-                 class="social-item" role="listitem"
-                 target="_blank" rel="noopener noreferrer"
-                 aria-label="Facebook">Fb</a>
-              <a href="https://twitter.com/jmlfoto"
-                 class="social-item" role="listitem"
-                 target="_blank" rel="noopener noreferrer"
-                 aria-label="Twitter / X">X</a>
-              <a href="https://www.youtube.com/@jmlfoto-es"
-                 class="social-item" role="listitem"
-                 target="_blank" rel="noopener noreferrer"
-                 aria-label="YouTube">Yt</a>
-            </div>
+              <ul class="social-row" aria-label="Redes sociales">
+                <li>
+                  <a href="https://www.instagram.com/jmlfoto"
+                    class="social-item"
+                    target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">Ig</a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/jmlfoto"
+                    class="social-item"
+                    target="_blank" rel="noopener noreferrer"
+                    aria-label="Facebook">Fb</a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/jmlfoto"
+                    class="social-item"
+                    target="_blank" rel="noopener noreferrer"
+                    aria-label="Twitter / X">X</a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@jmlfoto-es"
+                    class="social-item"
+                    target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">Yt</a>
+                </li>
+              </ul>
           </div>
 
           <form class="contacto-form reveal"
@@ -687,8 +698,8 @@
   </main>
 
   <!-- ── FOOTER ──────────────────────────────────────────────── -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-inner">
+<footer class="footer">
+      <div class="footer-inner">
 
       <div class="footer-left">
         <span class="footer-logo">jmlfoto</span>

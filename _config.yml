@@ -1,0 +1,17 @@
+title: jmlfoto.es
+description: Fotografía, patrimonio, viajes, conciertos y territorio
+url: https://jmlfoto.es
+baseurl: ""
+lang: es
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+plugins:
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: Jose Morales
+      
