@@ -9,7 +9,7 @@ image: /assets/img/blog-cortegana.webp
 
 Hay noches en las que la música no solo suena, sino que transforma un lugar entero. En Cortegana, durante el Festival Internacional Sierra Celta, la historia medieval y la energía del folk contemporáneo se encuentran para crear algo difícil de explicar y fácil de sentir. Bajo la silueta del castillo y entre miles de personas, lo que ocurre no es solo un concierto: es una experiencia que merece ser contada.
 
-## El lugar y su contexto
+### El lugar y su contexto
 
 Cortegana, en plena Sierra de Huelva, es uno de esos lugares donde el paisaje y la historia conviven de forma natural. Dominada por su castillo medieval, la villa conserva un carácter que durante las Jornadas Medievales se intensifica hasta transformar por completo sus calles. Durante unos días, el pueblo deja de ser solo un destino para convertirse en una experiencia inmersiva, donde el pasado se recrea y se vive.
 
@@ -17,11 +17,7 @@ En ese contexto, el Festival Internacional Sierra Celta ocupa un lugar central e
 
 El valor del festival no está únicamente en su programación, sino en cómo se inserta dentro de un evento mayor que atrae a miles de visitantes. Esa mezcla de mercado medieval, actividad cultural y música en directo convierte a Cortegana en un punto de referencia, donde tradición y modernidad se encuentran sin artificio.
 
-## La experiencia sobre el terreno
-
-Mantengo tu mirada personal y el ambiente vivido:
-
-***
+### La experiencia sobre el terreno
 
 Llegar a Cortegana en plena celebración de sus Jornadas Medievales es entrar en otro ritmo. Antes incluso de acercarme al recinto del castillo, el ambiente ya lo llenaba todo: calles abarrotadas, puestos, música que aparecía en cualquier rincón y esa mezcla de visitantes y vecinos que convierte el pueblo en un escenario vivo. No es un lugar al que se llega, es un lugar que te envuelve.
 
@@ -31,7 +27,7 @@ Me moví entre la gente, observando primero sin cámara, dejando que la escena s
 
 Desde ese momento, la noche dejó de ser solo un evento para convertirse en una sucesión de momentos. Miradas, saltos, gestos, polvo en el aire, luces recortando siluetas contra la piedra del castillo. Y entre todo eso, la sensación constante de estar en un lugar donde la música no acompaña al entorno, sino que lo activa.
 
-## La mirada fotográfica
+### La mirada fotográfica
 
 Fotografiar en Cortegana, a los pies de un castillo y en pleno festival al aire libre, es trabajar con un escenario tan potente como exigente. La noche cae rápido y la luz artificial toma el control casi por completo, pero aquí no es uniforme ni predecible: hay zonas muy contrastadas, fondos oscuros y puntos de iluminación dura que obligan a ajustar constantemente.
 
@@ -43,7 +39,7 @@ Con BATEA, el movimiento era constante, casi eléctrico. Eso exigía anticipaci�
 
 Al final, en una noche así, la técnica es solo el punto de partida. La clave está en adaptarse, en leer el ritmo de lo que ocurre y en entender que estás fotografiando algo que no se repetirá de la misma forma. Y eso exige estar presente, más que perfecto.
 
-## Detalles que merece la pena conocer
+### Detalles que merece la pena conocer
 
 El Castillo de Cortegana, que domina toda la escena del festival, es una fortaleza del siglo XIII vinculada a la defensa de la Banda Gallega frente a Portugal. Su presencia no es solo estética: aporta un contexto histórico real que da sentido a las Jornadas Medievales y refuerza la autenticidad del entorno.
 
@@ -55,6 +51,6 @@ Un detalle interesante es cómo cambia el ambiente según avanza la noche: lo qu
 
 Como observación personal, este es un lugar donde el contexto pesa tanto como la música. Fotografiar aquí no es solo capturar un directo, sino entender que cada imagen forma parte de una escena mayor donde historia, paisaje y público construyen algo único.
 
-## Cierre
+### Cierre
 
 Cuando la música se apaga y el castillo vuelve a quedar en silencio, Cortegana sigue vibrando en la memoria. Porque hay noches que no terminan al marcharte, se quedan contigo, como una mezcla de sonido, piedra y emoción difícil de olvidar.
