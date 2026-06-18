@@ -16,39 +16,34 @@ const onReady = (fn) => {
 
 /* ─── NAVEGACIÓN ────────────────────────────────────────────── */
 const initNav = () => {
-  const nav    = $('#nav');
+  const nav = $('#nav');
   const toggle = $('#nav-toggle');
-  const menu   = $('#nav-menu');
+  const menu = $('#nav-menu');
   if (!nav) return;
 
-  // Clase scrolled al bajar
   const onScroll = () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Menú móvil
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
       const open = menu.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
       document.body.style.overflow = open ? 'hidden' : '';
-
-    toggle.classList.toggle('is-open', open);
+      toggle.classList.toggle('is-open', open);
     });
 
-    // Cierra al hacer clic en un enlace
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
-    toggle.classList.remove('is-open');
+        toggle.classList.remove('is-open');
       });
     });
 
-    // Cierra con Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.classList.contains('open')) {
         menu.classList.remove('open');
@@ -60,17 +55,24 @@ const initNav = () => {
     });
   }
 
-  // Enlace activo según sección visible
   const sections = $$('section[id]');
-  const links    = $$('.nav-link');
+  const links = $$('.nav-link');
+
+  const isHomeLikeNav = [...links].some(link => {
+    const href = link.getAttribute('href') || '';
+    return href.startsWith('#');
+  });
 
   const markActive = () => {
+    if (!sections.length || !links.length || !isHomeLikeNav) return;
+
     let current = '';
     sections.forEach(sec => {
       if (window.scrollY >= sec.offsetTop - 120) {
         current = sec.id;
       }
     });
+
     links.forEach(link => {
       link.classList.toggle(
         'active',
@@ -79,9 +81,11 @@ const initNav = () => {
     });
   };
 
-  window.addEventListener('scroll', markActive, { passive: true });
+  if (isHomeLikeNav) {
+    window.addEventListener('scroll', markActive, { passive: true });
+    markActive();
+  }
 };
-
 
 /* ─── SCROLL REVEAL ─────────────────────────────────────────── */
 const initReveal = () => {
