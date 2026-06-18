@@ -20,33 +20,33 @@ jmlfoto-web/
     └── img/
         │
         │── HERO (slideshow)
-        ├── hero-01.jpg          1920×1080 px · Concierto, Vincent de Gwendal
-        ├── hero-02.jpg          1920×1080 px · Naturaleza, seta
-        ├── hero-03.jpg          1920×1080 px · Retrato de Ángela
-        ├── hero-04.jpg          1920×1080 px · Modelo en campo de lavanda
+        ├── hero-01.webp          1920×1080 px · Concierto, Vincent de Gwendal
+        ├── hero-02.webp          1920×1080 px · Naturaleza, seta
+        ├── hero-03.webp          1920×1080 px · Retrato de Ángela
+        ├── hero-04.webp          1920×1080 px · Modelo en campo de lavanda
         │
         │── SOBRE MÍ
-        ├── retrato.jpg          600×800 px  · Foto vertical (Ortigueira)
+        ├── retrato.webp          600×800 px  · Foto vertical (Ortigueira)
         │
         │── PORTFOLIO
-        ├── portfolio-conciertos.jpg   800×600 px · Horizontal
-        ├── portfolio-naturaleza.jpg   800×600 px · Horizontal
-        ├── portfolio-patrimonio.jpg   800×600 px · Horizontal
-        ├── portfolio-dron.jpg         800×600 px · Horizontal
+        ├── portfolio-conciertos.webp   800×600 px · Horizontal
+        ├── portfolio-naturaleza.webp   800×600 px · Horizontal
+        ├── portfolio-patrimonio.webp   800×600 px · Horizontal
+        ├── portfolio-dron.webp         800×600 px · Horizontal
         │
         │── PROYECTO GWENDAL
-        ├── proyecto-gwendal.jpg       800×1000 px · Vertical
+        ├── proyecto-gwendal.webp       800×1000 px · Vertical
         │
         │── BLOG (actualizar con cada nueva entrada)
-        ├── blog-01.jpg          600×400 px · Entrada más reciente
-        ├── blog-02.jpg          600×400 px · Segunda entrada
-        ├── blog-03.jpg          600×400 px · Tercera entrada
+        ├── blog-01.webp          600×400 px · Entrada más reciente
+        ├── blog-02.webp          600×400 px · Segunda entrada
+        ├── blog-03.webp          600×400 px · Tercera entrada
         │
         │── COPIAS
-        ├── copias.jpg           800×1000 px · Vertical
+        ├── copias.webp           800×1000 px · Vertical
         │
         └── REDES SOCIALES
-            og-jmlfoto.jpg       1200×630 px · Preview al compartir en redes
+            og-jmlfoto.webp       1200×630 px · Preview al compartir en redes
 ```
 
 ---
@@ -126,7 +126,7 @@ El archivo `cookies.js` gestiona el consentimiento RGPD y la carga condicional d
 Todos los meta canónicos, Open Graph y Schema.org apuntan a `https://jmlfoto.es/`. No usar la URL de GitHub Pages en ninguna etiqueta SEO.
 
 ### Imagen Open Graph
-Archivo: `assets/img/og-jmlfoto.jpg`
+Archivo: `assets/img/og-jmlfoto.webp`
 Medidas obligatorias: **1200 × 630 px**, formato JPG, peso inferior a 300 KB.
 Es la imagen que aparece al compartir la web en redes sociales y WhatsApp.
 Verificar previsualización en: https://developers.facebook.com/tools/debug
@@ -170,7 +170,7 @@ Busca cada `.port-img` en `index.html` y sustituye el placeholder:
 <div class="img-ph">...</div>
 
 <!-- Después -->
-<img src="assets/img/portfolio-conciertos.jpg"
+<img src="assets/img/portfolio-conciertos.webp"
      alt="Fotografía de conciertos"
      loading="lazy" />
 ```
@@ -194,13 +194,13 @@ Busca cada `.blog-img` y sustituye el placeholder. Las imágenes del blog estaba
 <!-- Antes (placeholder incorrecto) -->
 <div class="blog-img">
   <div class="img-ph" aria-hidden="true">
-    <span>assets/img/blog-01.jpg</span>
+    <span>assets/img/blog-01.webp</span>
   </div>
 </div>
 
 <!-- Después (imagen real) -->
 <div class="blog-img">
-  <img src="assets/img/blog-01.jpg"
+  <img src="assets/img/blog-01.webp"
        alt="Título de la entrada"
        loading="lazy" />
 </div>
@@ -235,7 +235,7 @@ Cada vez que publiques una entrada nueva en WordPress:
   <a href="https://jmlfoto.es/TU-NUEVA-URL"
      target="_blank" rel="noopener noreferrer">
     <div class="blog-img">
-      <img src="assets/img/blog-01.jpg"
+      <img src="assets/img/blog-01.webp"
            alt="Título de la entrada"
            loading="lazy" />
     </div>
