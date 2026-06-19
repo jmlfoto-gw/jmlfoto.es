@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -166,7 +168,7 @@
 
 </head>
 <body>
-<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+<!-- <a class="skip-link" href="#main-content">Saltar al contenido principal</a> -->
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDFDLBF4" height="0" width="0"
@@ -174,42 +176,9 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- ── NAVEGACIÓN ─────────────────────────────────────────── -->
-      <header class="nav" id="nav">
-      <nav class="nav-inner" aria-label="Navegación principal">
 
-      <a href="#inicio" class="nav-logo" aria-label="Jose Morales jmlfoto">
-        jmlfoto
-      </a>
-
-      <button class="nav-toggle" id="nav-toggle"
-              aria-label="Abrir menú"
-              aria-expanded="false"
-              aria-controls="nav-menu">
-        <span></span><span></span>
-      </button>
-
-      <ul class="nav-menu" id="nav-menu" role="list">
-        <li><a href="#sobre" class="nav-link">Sobre mí</a></li>
-        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-        <li class="nav-item-drop">
-          <a href="#proyecto" class="nav-link nav-link-drop" aria-haspopup="true" aria-expanded="false">Proyectos</a>
-          <ul class="nav-dropdown" role="list">
-            <li><a href="#proyecto" class="nav-drop-link">Gwendal · 50 años de música celta</a></li>
-            <li><a href="#libros" class="nav-drop-link">Luz entre sombras</a></li>
-            <li><a href="#libros" class="nav-drop-link">Gredos, la sierra que susurra</a></li>
-            <li><a href="https://jmlfoto.wordpress.com/bandas-p/" class="nav-drop-link" target="_blank" rel="noopener noreferrer">Bandas y artistas</a></li>         
-          </ul>
-        </li>
-        <li><a href="#blog" class="nav-link">Blog</a></li>
-        <li><a href="#copias" class="nav-link">Copias</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-      </ul>
-
-    </nav>
-  </header>
-
-<main id="main-content" tabindex="-1">
-
+    <main id="main-content" tabindex="-1">
+    {% include header.html %}
   <!-- ── HERO ───────────────────────────────────────────────── -->
   <section class="hero" id="inicio" aria-label="Presentación">
 
@@ -504,27 +473,38 @@
       </div>
     </section>
 
-    <!-- ── BLOG ────────────────────────────────────────────────── -->
-    <section class="section blog" id="blog" aria-labelledby="blog-title">
-      <div class="container">
+<!-- ── BLOG ────────────────────────────────────────────────── -->
+  <section class="section blog" id="blog" aria-labelledby="blog-title">
+    <div class="container">
 
-        <div class="section-head reveal">
-          <span class="label">Últimas publicaciones</span>
-          <h2 id="blog-title">Blog</h2>
-        <a href="https://jmlfoto.wordpress.com/"
-          class="ver-todo"
-          target="_blank"
-          rel="noopener noreferrer">
-          Ver todo →
-        </a>          
-        </div>
-        <div class="blog-lista" id="blog-lista">
-          <!-- Las entradas se cargan automáticamente desde WordPress -->
-        </div>
-
+      <div class="section-head reveal">
+        <span class="label">Últimas publicaciones</span>
+        <h2 id="blog-title">Blog</h2>
+        <a href="/blog/" class="ver-todo">Ver todo →</a>
       </div>
-    </section>
+      <div class="blog-lista">
+        {% for post in site.posts limit:3 %}
+        <article class="blog-item reveal">
+          <a href="{{ post.url }}" class="blog-link" aria-label="Leer entrada: {{ post.title }}">
+            <div class="blog-img">
+              <img src="{{ post.image | default: '/assets/img/blog-01.webp' }}" alt="{{ post.title }}" loading="lazy" />
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span class="blog-cat">{% if post.categories and post.categories[0] %}{{ post.categories[0] }}{% else
+                  %}Blog{% endif %}</span>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+              </div>
+              <h3>{{ post.title }}</h3>
+              <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+            </div>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
 
+    </div>
+  </section>
     <!-- ── COPIAS ───────────────────────────────────────────────── -->
     <section class="section copias" id="copias" aria-labelledby="cop-title">
       <div class="container">
@@ -705,7 +685,7 @@
       </div>
 
       <nav class="footer-nav" aria-label="Navegación footer">
-        <a href="https://jmlfoto.wordpress.com" target="_blank" rel="noopener">Blog</a>
+        <a href="/blog/">Blog</a>
         <a href="https://jmlfoto-gw.github.io/gwendalceltic/" target="_blank" rel="noopener">Gwendal</a>
         <a href="privacidad.html">Privacidad</a>
         <a href="aviso-legal.html">Aviso legal</a>
