@@ -1410,7 +1410,7 @@ p:last-child {
 .newsletter--contact .nl-legal,
 .newsletter--contact .nl-ok,
 .newsletter--contact .nl-err {
-  font-size: 0.78rem;
+  font-size: 1.0rem;
   letter-spacing: 0.04em;
 }
 
