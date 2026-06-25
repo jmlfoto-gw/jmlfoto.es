@@ -1818,17 +1818,16 @@ p:last-child {
   padding: 0;
 }
 
-/* Estado por defecto: nav transparente sobre hero oscuro */
 .lang-btn {
   background: transparent;
-  border: 1px solid rgba(255,255,255,.55);
-  color: rgba(255,255,255,.82);
+  border: 1px solid rgba(255,255,255,.25);
+  color: var(--c-grey-2, #aaa);
   font-family: var(--f-sans, sans-serif);
   font-size: .65rem;
   font-weight: 500;
-  letter-spacing: .1em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  padding: .24rem .48rem;
+  padding: .22rem .45rem;
   border-radius: 3px;
   cursor: pointer;
   transition: border-color .2s, color .2s, background .2s;
@@ -1836,44 +1835,21 @@ p:last-child {
 }
 
 .lang-btn:hover {
-  border-color: rgba(255,255,255,.95);
+  border-color: rgba(255,255,255,.6);
   color: #fff;
-  background: rgba(255,255,255,.08);
 }
 
 .lang-btn--active {
-  border-color: rgba(255,255,255,.95);
-  color: #fff;
-  background: rgba(255,255,255,.14);
+  border-color: var(--c-accent, #b8965a);
+  color: var(--c-accent, #b8965a);
+  background: rgba(184,150,90,.08);
 }
 
 .lang-sep {
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.2);
   font-size: .65rem;
   line-height: 1;
   user-select: none;
-}
-
-/* Estado scrolled: nav sobre fondo blanco — invertir colores */
-.nav.scrolled .lang-btn {
-  border-color: rgba(0,0,0,.3);
-  color: var(--c-grey-2);
-}
-
-.nav.scrolled .lang-btn:hover {
-  border-color: var(--c-black);
-  color: var(--c-black);
-  background: rgba(0,0,0,.05);
-}
-
-.nav.scrolled .lang-btn--active {
-  border-color: var(--c-black);
-  color: var(--c-black);
-  background: rgba(0,0,0,.07);
-}
-
-.nav.scrolled .lang-sep {
-  color: rgba(0,0,0,.25);
 }
 
 /* Móvil: en el menú desplegable */
@@ -1882,23 +1858,10 @@ p:last-child {
     margin: .5rem 0 0 0;
     justify-content: flex-start;
     padding: .5rem 0;
-    border-top: 1px solid rgba(255,255,255,.1);
+    border-top: 1px solid rgba(255,255,255,.08);
   }
   .lang-btn {
     padding: .35rem .6rem;
     font-size: .7rem;
-  }
-  /* En móvil el menú siempre tiene fondo oscuro */
-  .nav.scrolled .lang-btn {
-    border-color: rgba(255,255,255,.55);
-    color: rgba(255,255,255,.82);
-  }
-  .nav.scrolled .lang-btn--active {
-    border-color: rgba(255,255,255,.95);
-    color: #fff;
-    background: rgba(255,255,255,.14);
-  }
-  .nav.scrolled .lang-sep {
-    color: rgba(255,255,255,.35);
   }
 }
