@@ -1821,30 +1821,30 @@ p:last-child {
   padding: 0;
 }
 
-/* Estado por defecto: nav transparente sobre hero oscuro */
+/* Elemento <a> — sin herencia de button, CSS puro */
 .lang-btn {
-  -webkit-appearance: none;
-  appearance: none;
   display: inline-block;
   background: transparent;
-  border: 1px solid #ffffff;        /* blanco sólido — sin opacidad */
-  color: #ffffff;                    /* blanco sólido — sin opacidad */
+  border: 1px solid #fff;
+  color: #fff;
   font-family: var(--f-sans, sans-serif);
   font-size: .6rem;
   font-weight: 500;
   letter-spacing: .1em;
   text-transform: uppercase;
+  text-decoration: none;
   padding: .26rem .5rem;
   border-radius: 3px;
   cursor: pointer;
-  transition: border-color .2s, color .2s, background .2s, opacity .2s;
+  opacity: .7;
+  transition: opacity .2s, background .2s;
   line-height: 1;
-  opacity: .75;                      /* controlar visibilidad con opacity, no con rgba */
 }
 
 .lang-btn:hover {
   opacity: 1;
   background: rgba(255,255,255,.12);
+  text-decoration: none;
 }
 
 .lang-btn--active {
@@ -1853,40 +1853,36 @@ p:last-child {
 }
 
 .lang-sep {
-  color: #ffffff;
+  display: inline-block;
+  color: #fff;
   opacity: .3;
   font-size: .6rem;
   line-height: 1;
   user-select: none;
 }
 
-/* Estado scrolled: nav sobre fondo claro — invertir a oscuro */
+/* Nav scrolled: fondo claro — botones oscuros */
 .nav.scrolled .lang-btn {
-  border-color: var(--c-black, #0d0d0d);
-  color: var(--c-black, #0d0d0d);
-  opacity: .5;
+  border-color: #0d0d0d;
+  color: #0d0d0d;
 }
 
 .nav.scrolled .lang-btn:hover {
-  opacity: 1;
   background: rgba(0,0,0,.06);
 }
 
 .nav.scrolled .lang-btn--active {
-  opacity: 1;
   background: rgba(0,0,0,.08);
 }
 
 .nav.scrolled .lang-sep {
-  color: var(--c-black, #0d0d0d);
-  opacity: .25;
+  color: #0d0d0d;
 }
 
-/* Móvil: menú desplegable — siempre fondo oscuro */
+/* Móvil */
 @media (max-width: 768px) {
   .lang-switcher {
     margin: .5rem 0 0 0;
-    justify-content: flex-start;
     padding: .5rem 0;
     border-top: 1px solid rgba(255,255,255,.1);
   }
@@ -1895,16 +1891,10 @@ p:last-child {
     font-size: .65rem;
   }
   .nav.scrolled .lang-btn {
-    border-color: #ffffff;
-    color: #ffffff;
-    opacity: .75;
-  }
-  .nav.scrolled .lang-btn--active {
-    opacity: 1;
-    background: rgba(255,255,255,.18);
+    border-color: #fff;
+    color: #fff;
   }
   .nav.scrolled .lang-sep {
-    color: #ffffff;
-    opacity: .3;
+    color: #fff;
   }
 }

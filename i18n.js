@@ -93,18 +93,22 @@
     const li = document.createElement('li');
     li.className = 'lang-switcher';
     li.setAttribute('aria-label', 'Seleccionar idioma');
+    /* Usamos <a> en lugar de <button> para evitar estilos del SO en Safari/Chrome */
     li.innerHTML =
-      '<button class="lang-btn" data-lang="es" aria-pressed="false" title="Español">ES</button>' +
+      '<a class="lang-btn" data-lang="es" role="button" aria-pressed="false" title="Español" href="#" tabindex="0">ES</a>' +
       '<span class="lang-sep" aria-hidden="true">·</span>' +
-      '<button class="lang-btn" data-lang="fr" aria-pressed="false" title="Français">FR</button>' +
+      '<a class="lang-btn" data-lang="fr" role="button" aria-pressed="false" title="Français" href="#" tabindex="0">FR</a>' +
       '<span class="lang-sep" aria-hidden="true">·</span>' +
-      '<button class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>';
+      '<a class="lang-btn" data-lang="en" role="button" aria-pressed="false" title="English" href="#" tabindex="0">EN</a>';
 
     /* Añadir al final — después de "Contacto" */
     navMenu.appendChild(li);
 
     li.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLang(btn.dataset.lang));
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        setLang(btn.dataset.lang);
+      });
     });
   }
 
