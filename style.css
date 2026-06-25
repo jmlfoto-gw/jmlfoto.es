@@ -82,6 +82,9 @@ button {
   border: none;
   background: none;
   font-family: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 /* Scrollbar */
@@ -1820,63 +1823,66 @@ p:last-child {
 
 /* Estado por defecto: nav transparente sobre hero oscuro */
 .lang-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
   background: transparent;
-  border: 1px solid rgba(255,255,255,.55);
-  color: rgba(255,255,255,.82);
+  border: 1px solid #ffffff;        /* blanco sólido — sin opacidad */
+  color: #ffffff;                    /* blanco sólido — sin opacidad */
   font-family: var(--f-sans, sans-serif);
-  font-size: .65rem;
+  font-size: .6rem;
   font-weight: 500;
   letter-spacing: .1em;
   text-transform: uppercase;
-  padding: .24rem .48rem;
+  padding: .26rem .5rem;
   border-radius: 3px;
   cursor: pointer;
-  transition: border-color .2s, color .2s, background .2s;
+  transition: border-color .2s, color .2s, background .2s, opacity .2s;
   line-height: 1;
+  opacity: .75;                      /* controlar visibilidad con opacity, no con rgba */
 }
 
 .lang-btn:hover {
-  border-color: rgba(255,255,255,.95);
-  color: #fff;
-  background: rgba(255,255,255,.08);
+  opacity: 1;
+  background: rgba(255,255,255,.12);
 }
 
 .lang-btn--active {
-  border-color: rgba(255,255,255,.95);
-  color: #fff;
-  background: rgba(255,255,255,.14);
+  opacity: 1;
+  background: rgba(255,255,255,.18);
 }
 
 .lang-sep {
-  color: rgba(255,255,255,.35);
-  font-size: .65rem;
+  color: #ffffff;
+  opacity: .3;
+  font-size: .6rem;
   line-height: 1;
   user-select: none;
 }
 
-/* Estado scrolled: nav sobre fondo blanco — invertir colores */
+/* Estado scrolled: nav sobre fondo claro — invertir a oscuro */
 .nav.scrolled .lang-btn {
-  border-color: rgba(0,0,0,.3);
-  color: var(--c-grey-2);
+  border-color: var(--c-black, #0d0d0d);
+  color: var(--c-black, #0d0d0d);
+  opacity: .5;
 }
 
 .nav.scrolled .lang-btn:hover {
-  border-color: var(--c-black);
-  color: var(--c-black);
-  background: rgba(0,0,0,.05);
+  opacity: 1;
+  background: rgba(0,0,0,.06);
 }
 
 .nav.scrolled .lang-btn--active {
-  border-color: var(--c-black);
-  color: var(--c-black);
-  background: rgba(0,0,0,.07);
+  opacity: 1;
+  background: rgba(0,0,0,.08);
 }
 
 .nav.scrolled .lang-sep {
-  color: rgba(0,0,0,.25);
+  color: var(--c-black, #0d0d0d);
+  opacity: .25;
 }
 
-/* Móvil: en el menú desplegable */
+/* Móvil: menú desplegable — siempre fondo oscuro */
 @media (max-width: 768px) {
   .lang-switcher {
     margin: .5rem 0 0 0;
@@ -1885,20 +1891,20 @@ p:last-child {
     border-top: 1px solid rgba(255,255,255,.1);
   }
   .lang-btn {
-    padding: .35rem .6rem;
-    font-size: .7rem;
+    padding: .35rem .65rem;
+    font-size: .65rem;
   }
-  /* En móvil el menú siempre tiene fondo oscuro */
   .nav.scrolled .lang-btn {
-    border-color: rgba(255,255,255,.55);
-    color: rgba(255,255,255,.82);
+    border-color: #ffffff;
+    color: #ffffff;
+    opacity: .75;
   }
   .nav.scrolled .lang-btn--active {
-    border-color: rgba(255,255,255,.95);
-    color: #fff;
-    background: rgba(255,255,255,.14);
+    opacity: 1;
+    background: rgba(255,255,255,.18);
   }
   .nav.scrolled .lang-sep {
-    color: rgba(255,255,255,.35);
+    color: #ffffff;
+    opacity: .3;
   }
 }
