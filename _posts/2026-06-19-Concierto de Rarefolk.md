@@ -17,12 +17,12 @@ Las II Jornadas del Bienestar de Arroyomolinos ofrecieron un contexto singular q
 
 Para quienes seguimos de cerca la evolución del folk, la presencia de Rubén Díez al frente de las flautas y whistles es siempre un reclamo. 
 
-![Rubén Díez](//assets/img/blog/Rarefolk-4.webp)
+![Rubén Díez](/assets/img/blog/Rarefolk-4.webp)
 *Rubén Díez*
 
 Mi conexión con su trabajo viene de lejos, especialmente desde su destacada colaboración en el emblemático disco de Gwendal, "Live in Getxo", y de haber tenido la ocasión de fotografiarle en diversos eventos a lo largo de los años. Verle de nuevo junto a Mangu Díaz, Marcos Munné, Oscar Valero (Mufas) y Rafael Rabal es ser testigo de una química musical perfeccionada desde 1992. Rarefolk ha sabido reinventarse desde sus inicios puramente celtas hacia lo que la prensa denomina "Freestyle Folk", un estilo donde el jazz y los ritmos africanos se entrelazan con una maestría que rompe cualquier molde preestablecido.
 
-![El Mufas que lo dio todo](//assets/img/blog/Rarefolk-5.webp)
+![El Mufas que lo dio todo](/assets/img/blog/Rarefolk-5.webp)
 *El Mufas no paró de saltar en todo el concierto*
 
 
@@ -30,11 +30,11 @@ Mi conexión con su trabajo viene de lejos, especialmente desde su destacada col
 
 El concierto alcanzó su punto álgido al desgranar los pasajes de su trabajo más reciente, Psyderal (2020). Este álbum, que fue nominado como mejor trabajo de Nuevas Músicas en los Premios MIN, marca la pauta de su sonido actual: un viaje que parte de sólidas raíces en la tierra para proyectarse hacia atmósferas psicodélicas y paisajes estratosféricos. 
 
-![Mangu, con su clásica mangulina](//assets/img/blog/Rarefolk-2.webp)
+![Mangu, con su clásica mangulina](/assets/img/blog/Rarefolk-2.webp)
 *Mangu, con su clásica mangulina*
 
 
 Durante la actuación, la energía fluyó de forma constante, transformando la melodía folk en una invitación directa al baile y al derroche de adrenalina. Fue una noche donde Rarefolk no solo celebró su historia, sino que reafirmó su compromiso con la innovación, dejando claro que su música es un lenguaje universal que sigue recordándonos que, a pesar de todo, el mundo es hermoso.
 
-![El grupo despidiéndose tras el último tema](//assets/img/blog/Rarefolk-6.webp)
+![El grupo despidiéndose tras el último tema](/assets/img/blog/Rarefolk-6.webp)
 *El grupo despidiéndose tras el último tema*
