@@ -1,0 +1,85 @@
+---
+layout: default
+title: "Bandas y artistas · Jose Morales jmlfoto"
+permalink: /bandas/
+meta-description: "Catálogo de bandas de folk y música celta fotografiadas por Jose Morales en directo: historias,
+biografías y reportajes de concierto."
+bandas:
+- nombre: "CAHORNEGA"
+url: "https://jmlfoto.wordpress.com/2025/11/17/cahornega/"
+- nombre: "CALUM STEWART"
+url: "https://jmlfoto.wordpress.com/2025/11/15/calum-stewart/"
+- nombre: "BREO"
+url: "https://jmlfoto.wordpress.com/2025/11/15/breo/"
+- nombre: "GWENDAL"
+url: "https://jmlfoto.wordpress.com/2025/08/20/gwendal/"
+- nombre: "BATEA"
+url: "https://jmlfoto.wordpress.com/2025/08/17/batea/"
+- nombre: "AKAB"
+url: "https://jmlfoto.wordpress.com/2025/08/09/akab/"
+- nombre: "DALLAHAN"
+url: "https://jmlfoto.wordpress.com/2025/08/07/dallahan/"
+- nombre: "LA BOTTINE SOURIANTE"
+url: "https://jmlfoto.wordpress.com/2025/08/07/la-bottine-souriante/"
+- nombre: "DAVID PASQUET"
+url: "https://jmlfoto.wordpress.com/2025/08/07/david-pasquet-3/"
+- nombre: "FLOOK"
+url: "https://jmlfoto.wordpress.com/2025/08/07/flook/"
+- nombre: "GARMA"
+url: "https://jmlfoto.wordpress.com/2025/07/17/garma/"
+- nombre: "MANANTIAL FOLK"
+url: "https://jmlfoto.wordpress.com/2025/07/17/manantial-folk/"
+- nombre: "RAREFOLK"
+url: "https://jmlfoto.wordpress.com/2026/06/27/rarefolk/"
+- nombre: "ANDRÉS PENABAD"
+url: "https://jmlfoto.wordpress.com/?s=Andr%C3%A9s+Penabad"
+- nombre: "CÚIG"
+url: "https://jmlfoto.wordpress.com/?s=Cuig"
+- nombre: "ASFALTO"
+url: "https://jmlfoto.wordpress.com/?s=Asfalto"
+- nombre: "MAELOC"
+url: "https://jmlfoto.wordpress.com/?s=Maeloc"
+- nombre: "MILLADOIRO"
+url: "https://jmlfoto.wordpress.com/?s=Milladoiro"
+- nombre: "ÑU"
+url: "https://jmlfoto.wordpress.com/?s=%C3%91u"
+- nombre: "ROSARIO LA TREMENDITA"
+url: "https://jmlfoto.wordpress.com/?s=Rosario+La+Tremendita"
+- nombre: "RUBÉN DÍEZ (RUSTED)"
+url: "https://jmlfoto.wordpress.com/?s=Ruben+Diez+Rusted"
+- nombre: "BACKWEST"
+url: "https://jmlfoto.wordpress.com/?s=Backwest"
+- nombre: "MOSQUERA CELTIC BAND"
+url: "https://jmlfoto.wordpress.com/?s=Mosquera+Celtic+Band"
+- nombre: "DRY RIVER"
+url: "https://jmlfoto.wordpress.com/?s=Dry+River"
+- nombre: "SCOTTISHFISH BAND"
+url: "https://jmlfoto.wordpress.com/?s=Scottishfish"
+- nombre: "LUAR NA LUBRE"
+url: "https://jmlfoto.wordpress.com/?s=Luar+Na+Lubre"
+- nombre: "CAPERCAILLIE"
+url: "https://jmlfoto.wordpress.com/?s=Capercaillie"
+- nombre: "DERVISH"
+url: "https://jmlfoto.wordpress.com/?s=Dervish"
+---
+<section class="bandas-index">
+    <header class="bandas-index-header">
+        <h1>Bandas</h1>
+        <p class="bandas-contador">
+            <strong>{{ page.bandas.size }}</strong> bandas y artistas de folk y música celta fotografiados en directo, a
+            lo largo de más de una década de conciertos.
+        </p>
+        <p>Cada nombre enlaza a su historia completa, publicada en mi blog.</p>
+    </header>
+
+    <ul class="bandas-lista" role="list">
+        {% assign bandas_ordenadas = page.bandas | sort: 'nombre' %}
+        {% for banda in bandas_ordenadas %}
+        <li>
+            <a href="{{ banda.url }}" class="banda-link" target="_blank" rel="noopener noreferrer">
+                {{ banda.nombre }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
