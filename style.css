@@ -1898,39 +1898,130 @@ p:last-child {
     color: #fff;
   }
 }
-/* ─── BANDAS ─────────────────────────────────────────────────── */
-.bandas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.9rem;
-  list-style: none;
-  margin: var(--space-md) 0;
+/* ─── BANDAS · HERO COMPACTO ─────────────────────────────────── */
+.bandas-hero {
+  position: relative;
+  height: 52vh;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-image: url('https://jmlfoto.wordpress.com/wp-content/uploads/2025/08/jmz9740.jpg');
+  background-size: cover;
+  background-position: center 30%;
 }
 
-.banda-chip {
-  display: block;
-  font-family: var(--f-body);
-  font-size: 0.82rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--c-grey-1);
-  background: var(--c-grey-5);
-  border: 1px solid var(--c-grey-4);
-  border-radius: 1px;
-  padding: 1rem 1.2rem;
+.bandas-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0.55) 0%, rgba(13, 13, 13, 0.75) 100%);
+}
+
+.bandas-hero-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
+  padding: 0 var(--pad);
+}
+
+.bandas-hero-content .label {
+  margin-bottom: 0.8rem;
+}
+
+.bandas-hero-content h1 {
+  font-family: var(--f-display);
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 400;
+  color: var(--c-white);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.bandas-hero-count {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bandas-hero-count strong {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--c-white);
+}
+
+/* ─── BANDAS · ÍNDICE EDITORIAL ──────────────────────────────── */
+.bandas-index-list {
+  list-style: none;
+  columns: 2;
+  column-gap: 3.5rem;
+  border-top: 1px solid var(--c-grey-4);
+}
+
+.bandas-index-list li {
+  break-inside: avoid;
+}
+
+.bandas-index-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--c-grey-4);
+  overflow: hidden;
+}
+
+.bandas-index-num {
+  font-family: var(--f-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--c-grey-3);
+  letter-spacing: 0.05em;
+  min-width: 1.8rem;
+}
+
+.bandas-index-name {
+  flex: 1;
+  font-family: var(--f-display);
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  font-weight: 400;
+  color: var(--c-black);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  transition: transform var(--t), color var(--t);
+}
+
+.bandas-index-arrow {
+  font-size: 1.1rem;
+  color: var(--c-grey-3);
+  opacity: 0;
+  transform: translateX(-8px);
   transition: all var(--t);
 }
 
-.banda-chip:hover {
-  color: var(--c-white);
-  background: var(--c-black);
-  border-color: var(--c-black);
+.bandas-index-row:hover {
+  background: var(--c-grey-5);
 }
 
-@media (max-width: 640px) {
-  .bandas-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+.bandas-index-row:hover .bandas-index-name {
+  transform: translateX(10px);
+  color: var(--c-grey-1);
+}
+
+.bandas-index-row:hover .bandas-index-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--c-black);
+}
+
+@media (max-width: 720px) {
+  .bandas-index-list {
+    columns: 1;
+  }
+
+  .bandas-hero {
+    height: 42vh;
+    min-height: 320px;
   }
 }
