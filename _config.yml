@@ -14,8 +14,4 @@ defaults:
     values:
       layout: post
       author: Jose Morales
-
-collections:
-  bandas:
-    output: true
-    permalink: /bandas/:slug/
+      
