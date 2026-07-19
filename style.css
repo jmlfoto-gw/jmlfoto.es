@@ -1898,3 +1898,39 @@ p:last-child {
     color: #fff;
   }
 }
+/* ─── BANDAS ─────────────────────────────────────────────────── */
+.bandas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.9rem;
+  list-style: none;
+  margin: var(--space-md) 0;
+}
+
+.banda-chip {
+  display: block;
+  font-family: var(--f-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-grey-1);
+  background: var(--c-grey-5);
+  border: 1px solid var(--c-grey-4);
+  border-radius: 1px;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  transition: all var(--t);
+}
+
+.banda-chip:hover {
+  color: var(--c-white);
+  background: var(--c-black);
+  border-color: var(--c-black);
+}
+
+@media (max-width: 640px) {
+  .bandas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}

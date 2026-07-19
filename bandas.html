@@ -33,23 +33,35 @@ bandas:
   - { nombre: "CAPERCAILLIE", url: "https://jmlfoto.wordpress.com/?s=Capercaillie" }
   - { nombre: "DERVISH", url: "https://jmlfoto.wordpress.com/?s=Dervish" }
 ---
-<section class="bandas-index">
-  <header class="bandas-index-header">
-    <h1>Bandas</h1>
-    <p class="bandas-contador">
-      <strong>{{ page.bandas.size }}</strong> bandas y artistas de folk y música celta fotografiados en directo, a lo largo de más de una década de conciertos.
-    </p>
-    <p>Cada nombre enlaza a su historia completa, publicada en mi blog.</p>
-  </header>
+<section class="section bandas">
+  <div class="container">
 
-  <ul class="bandas-lista" role="list">
-    {% assign bandas_ordenadas = page.bandas | sort: 'nombre' %}
-    {% for banda in bandas_ordenadas %}
-    <li>
-      <a href="{{ banda.url }}" class="banda-link" target="_blank" rel="noopener noreferrer">
-        {{ banda.nombre }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+    <div class="section-head">
+      <div>
+        <p class="label">Colección</p>
+        <h1 style="font-family: var(--f-display); font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.05; margin: 0;">Bandas y artistas</h1>
+      </div>
+    </div>
+
+    <p style="max-width: 640px; font-size: 1.02rem; color: var(--c-grey-1); line-height: 1.85; margin-bottom: var(--space-md);">
+      <strong style="font-family: var(--f-display); font-size: 1.4rem; font-style: italic; color: var(--c-black);">{{ page.bandas.size }} bandas</strong>
+      de folk y música celta fotografiadas en directo, a lo largo de más de una década de conciertos. Cada nombre enlaza a su historia completa, publicada en el blog.
+    </p>
+
+    <ul class="bandas-grid" role="list">
+      {% assign bandas_ordenadas = page.bandas | sort: 'nombre' %}
+      {% for banda in bandas_ordenadas %}
+      <li>
+        <a href="{{ banda.url }}" class="banda-chip" target="_blank" rel="noopener noreferrer">
+          {{ banda.nombre }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p>
+      <a href="/" class="btn-copias">← Volver al inicio</a>
+    </p>
+
+  </div>
 </section>
