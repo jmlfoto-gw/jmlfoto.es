@@ -1591,6 +1591,22 @@ p:last-child {
   .nav-link {
     font-size: 1rem;
     letter-spacing: 0.15em;
+    color: var(--c-grey-1);
+  }
+
+  .nav-link::after {
+    background: var(--c-black);
+  }
+
+  .nav-link:hover {
+    color: var(--c-black);
+  }
+
+  /* El menú móvil abierto siempre tiene fondo blanco,
+     así que el icono hamburguesa/X debe ser siempre oscuro
+     al abrirse, sin depender de si la página está "scrolled". */
+  .nav-toggle.is-open span {
+    background: var(--c-black) !important;
   }
 
   .hero-content {
