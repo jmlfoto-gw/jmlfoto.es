@@ -26,29 +26,49 @@ const initNav = () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* Bloqueo de scroll robusto para iOS: overflow:hidden en body no
+     basta, hay que fijar la posición para evitar el scroll "fantasma"
+     detrás del menú (causaba el solape visual en móvil). */
+  let lockedScrollY = 0;
+
+  const lockScroll = () => {
+    lockedScrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${lockedScrollY}px`;
+    document.body.style.width = '100%';
+  };
+
+  const unlockScroll = () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, lockedScrollY);
+  };
+
+  const closeMenu = () => {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.classList.remove('is-open');
+    unlockScroll();
+  };
+
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
       const open = menu.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
       toggle.classList.toggle('is-open', open);
+      open ? lockScroll() : unlockScroll();
     });
 
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        menu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-        toggle.classList.remove('is-open');
+        if (menu.classList.contains('open')) closeMenu();
       });
     });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.classList.contains('open')) {
-        menu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-        toggle.classList.remove('is-open');
+        closeMenu();
         toggle.focus();
       }
     });
@@ -484,8 +504,10 @@ const initDropdown = () => {
         trigger.setAttribute('aria-expanded', 'false');
         navMenu?.classList.remove('open');
         toggle?.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
         toggle?.classList.remove('is-open');
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
       });
     });
   });

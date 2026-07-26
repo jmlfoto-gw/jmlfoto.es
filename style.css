@@ -1891,11 +1891,11 @@ p:last-child {
     font-size: .65rem;
   }
   .nav.scrolled .lang-btn {
-    border-color: #fff;
-    color: #fff;
+    border-color: #0d0d0d;
+    color: #0d0d0d;
   }
   .nav.scrolled .lang-sep {
-    color: #fff;
+    color: #0d0d0d;
   }
 }
 /* ─── BANDAS · HERO COMPACTO ─────────────────────────────────── */
